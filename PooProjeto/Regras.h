@@ -9,6 +9,16 @@ using namespace std;
 
 
 class Regras {
+    int xr;
+    int yr;
+
+    /*Fazer->
+     *  igual_a(x)
+     *  menor_que(x)
+     *  maior_que(x)
+     *  entre(x,y)
+     *  fora(x,y)
+     */
 
 };
 

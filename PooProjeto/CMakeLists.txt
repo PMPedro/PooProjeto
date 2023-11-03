@@ -21,6 +21,8 @@ add_executable(PooProjeto main.cpp
         Terminal.h
         Terminal.cpp
         curses.h
+        Data.cpp
+        Data.h
 )
 
 target_link_libraries(${PROJECT_NAME} C:/PDCurses-3.9/wincon/pdcurses.a)
