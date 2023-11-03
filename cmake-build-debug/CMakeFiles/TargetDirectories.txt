@@ -1,0 +1,3 @@
+C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/cmake-build-debug/CMakeFiles/PooProjeto.dir
+C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/cmake-build-debug/CMakeFiles/rebuild_cache.dir

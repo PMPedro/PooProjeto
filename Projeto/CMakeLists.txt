@@ -3,7 +3,7 @@ project(TP)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(TP main.cpp
+add_executable(PooProjeto main.cpp
         Regras.cpp
         Regras.h
         Processador.cpp
@@ -18,3 +18,14 @@ add_executable(TP main.cpp
         Zonas.h
         Habitacao.cpp
         Habitacao.h)
+
+
+
+include_directories(/PDCurses-master/)
+
+
+
+
+
+
+
