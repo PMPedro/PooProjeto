@@ -8,6 +8,8 @@
 
 class Processador {
     Regras Regras;
+
+public:
     //devolvem aos aparelhos o output das regras
 
 };

@@ -9,9 +9,15 @@ using namespace std;
 
 
 class Regras {
-    int xr;
-    int yr;
+    int igualx;
+    int menorqx;
+    int maiorqx;
+    int entrex, entrey;
+    int forax,foray;
 
+public:
+
+    Regras();
     /*Fazer->
      *  igual_a(x)
      *  menor_que(x)

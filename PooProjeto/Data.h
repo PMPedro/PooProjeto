@@ -10,9 +10,13 @@ using namespace std;
 class Data {
     int quantidade;
     string unidade;
-
+public:
     Data(int qt = 0, string uni = "");
     Data getValores();
+
+    void setQuantidade(int Quantidade);
+    void setUnidade(string Unidade);
+
 
 };
 

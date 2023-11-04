@@ -12,7 +12,7 @@ class Aparelhos {
     bool aspersor;
     bool refrigerador;
     bool lampada;
-
+public:
     Aparelhos();
 
     void onOfAquecedor();

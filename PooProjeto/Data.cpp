@@ -14,3 +14,11 @@ Data Data::getValores() {
     return aux;
 }
 
+void Data::setUnidade(std::string Unidade) {
+    this->unidade = Unidade;
+}
+
+void Data::setQuantidade(int Quantidade) {
+    this->quantidade = Quantidade;
+}
+

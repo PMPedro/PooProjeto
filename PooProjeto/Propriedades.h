@@ -17,8 +17,10 @@ class Propriedades {
     Data vibracao; //Em Hertz, MIN_>0
     Data humidade; //em %, Min->0, MAX->100
     Data fumo; //em Obscuração(%), MIN->0,MAX->100
-    Data SOM; //Decibeis MIN->0
+    Data som; //Decibeis MIN->0
 
+public:
+    Propriedades(Sensores Sensor = Sensores (), Aparelhos aparelhos = Aparelhos (), Data temperatura = Data (), Data luz = Data (), Data Rad = Data (), Data vib = Data (), Data humi = Data (), Data Fumo = Data (), Data Som = Data ());
     //ir buscar valores aos sensores
     //Usa a class Data para ter valores de char i int, tb dá struct
 

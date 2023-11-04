@@ -10,6 +10,7 @@
 class Habitacao {
     vector<Zonas> zonas;
     int dimensaoX, dimensaoY;
+
 public:
     Habitacao(int dimensaoX = 0, int dimensaoY = 0, const vector<Zonas>& zonas = vector<Zonas>());
 

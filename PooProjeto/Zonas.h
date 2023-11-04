@@ -9,6 +9,8 @@
 class Zonas {
     Propriedades propriedades;
     int id;
+
+public:
 };
 
 

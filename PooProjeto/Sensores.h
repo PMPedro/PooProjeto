@@ -9,8 +9,11 @@
 
 class Sensores {
     Regras regras;
-    char propriedadeLida;
-    int valorLido;
+    string propriedadeLida;
+    Data valorLido;
+
+public:
+    Sensores(string Propriedade = " ", Data valor = Data());
 
 
     //NAo reage a passagem do tempo
