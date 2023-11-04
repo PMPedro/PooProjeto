@@ -36,5 +36,5 @@ void Aparelhos::onOfRefrigerador() {
 const bool Aparelhos::getStateAquecedor()     {   return this->aquecedor;}
 const bool Aparelhos::getStateAspersor()      {   return this->aspersor;}
 const bool Aparelhos::getStateLampada()       {   return this->lampada;}
-const bool Aparelhos::getStateRefrigerador() {    return this->refrigerador}
+const bool Aparelhos::getStateRefrigerador() {    return this->refrigerador;}
 
