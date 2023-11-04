@@ -13,6 +13,19 @@ class Aparelhos {
     bool refrigerador;
     bool lampada;
 
+    Aparelhos();
+
+    void onOfAquecedor();
+    void onOfAspersor();
+    void onOfRefrigerador();
+    void onOfLampada();
+
+    const bool getStateAquecedor();
+    const bool getStateAspersor();
+    const bool getStateRefrigerador();
+    const bool getStateLampada();
+
+
     //Da para ligar e desligar cada aparelho (true / false)
     //Ao ligar e desligar tem efeitos
     /*
