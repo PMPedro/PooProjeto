@@ -6,24 +6,27 @@
 #define TP_REGRAS_H
 
 using namespace std;
-
+#include "iostream"
 
 class Regras {
-    int igualx;
-    int menorqx;
-    int maiorqx;
-    int entrex, entrey;
-    int forax,foray;
+    int x;
+    int y;
+    int qualRegra; //
 
 public:
 
-    Regras();
+    Regras(int x, int regra, int y = 0);
+    void setRegra(int regra, int x = 0, int y = 0);
+    void setX(int x);
+    void setY(int Y);
+    bool obterValorRegra(int valor);
+
     /*Fazer->
-     *  igual_a(x)
-     *  menor_que(x)
-     *  maior_que(x)
-     *  entre(x,y)
-     *  fora(x,y)
+     *  igual_a(x)  ->1
+     *  menor_que(x) ->2
+     *  maior_que(x)->3
+     *  entre(x,y) ->4
+     *  fora(x,y) ->5
      */
 
 };
