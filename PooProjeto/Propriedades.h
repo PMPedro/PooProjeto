@@ -9,7 +9,7 @@
 #include "Data.h"
 
 class Propriedades {
-    Sensores sensor;
+    Sensores sensor[6];
     Aparelhos aparelho;
     Data temperatura; //em celcius MIN->-273
     Data luz; //Em lumens, MIN->0

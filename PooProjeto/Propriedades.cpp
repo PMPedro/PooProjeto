@@ -5,7 +5,9 @@
 #include "Propriedades.h"
 
 Propriedades::Propriedades(Sensores Sensor, Aparelhos aparelhos, Data temperatura, Data luz, Data Rad, Data vib,  Data humi, Data Fumo, Data Som) {
-    this->sensor = Sensor;
+    for(int i=0;i<=6;i++){
+    this->sensor[i] = Sensor;
+    }
     this->aparelho = aparelhos;
     this->temperatura = temperatura;
     this->luz = luz;
