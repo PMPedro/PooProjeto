@@ -4,13 +4,15 @@
 
 #include "Aparelhos.h"
 
+
 Aparelhos::Aparelhos() {
     this->lampada = false;
     this->aquecedor = false;
     this->refrigerador = false;
     this->aspersor = false;
+    Processador p1;
+    this->processador = p1;
 }
-
 
 void Aparelhos::onOfAquecedor() {
     if(!this->aquecedor){   this->aquecedor = true; }

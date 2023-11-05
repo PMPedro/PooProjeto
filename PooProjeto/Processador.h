@@ -5,11 +5,14 @@
 #ifndef TP_PROCESSADOR_H
 #define TP_PROCESSADOR_H
 #include "Regras.h"
+#include "vector"
 
 class Processador {
-    Regras Regras;
+    vector <Regras> regras;
 
 public:
+
+    Processador(const vector<Regras>& regras = vector <Regras>());
     //devolvem aos aparelhos o output das regras
 
 };

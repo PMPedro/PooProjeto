@@ -15,7 +15,7 @@ class Regras {
 
 public:
 
-    Regras(int x, int regra, int y = 0);
+    Regras(int x=0, int regra = 0, int y = 0);
     void setRegra(int regra, int x = 0, int y = 0);
     void setX(int x);
     void setY(int Y);

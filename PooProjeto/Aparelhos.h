@@ -7,7 +7,7 @@
 #include "Processador.h"
 
 class Aparelhos {
-    Processador Processador;
+    Processador processador;
     bool aquecedor;
     bool aspersor;
     bool refrigerador;

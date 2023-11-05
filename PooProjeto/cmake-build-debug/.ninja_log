@@ -34,3 +34,15 @@
 7	128	7208280174615040	CMakeFiles/PooProjeto.dir/Aparelhos.cpp.obj	58adca9243095561
 4	660	7208280482610640	CMakeFiles/PooProjeto.dir/Sensores.cpp.obj	95034a4584fe8c25
 661	862	7208280484560608	PooProjeto.exe	d2ac07bf51fc5f7f
+31	1483	7209099483147323	CMakeFiles/PooProjeto.dir/Regras.cpp.obj	8244735801fb438f
+48	1513	7209099483398625	CMakeFiles/PooProjeto.dir/Zonas.cpp.obj	97decb9bc235edcf
+56	1580	7209099484126789	CMakeFiles/PooProjeto.dir/Aparelhos.cpp.obj	58adca9243095561
+38	1581	7209099484116833	CMakeFiles/PooProjeto.dir/Sensores.cpp.obj	95034a4584fe8c25
+21	1657	7209099484900980	CMakeFiles/PooProjeto.dir/Processador.cpp.obj	a4d7b80f200ad430
+67	1800	7209099486313571	CMakeFiles/PooProjeto.dir/Propriedades.cpp.obj	346febe18993c42
+80	1966	7209099487990088	CMakeFiles/PooProjeto.dir/Habitacao.cpp.obj	1a814cc679acae22
+11	2001	7209099488360721	CMakeFiles/PooProjeto.dir/main.cpp.obj	90803a7f1d010c87
+6	667	7209099741266835	CMakeFiles/PooProjeto.dir/Aparelhos.cpp.obj	58adca9243095561
+3	616	7209100817550856	CMakeFiles/PooProjeto.dir/Aparelhos.cpp.obj	58adca9243095561
+5	764	7209102029531664	CMakeFiles/PooProjeto.dir/Aparelhos.cpp.obj	58adca9243095561
+764	989	7209102031720611	PooProjeto.exe	d2ac07bf51fc5f7f

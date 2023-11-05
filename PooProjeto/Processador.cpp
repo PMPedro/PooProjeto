@@ -3,3 +3,7 @@
 //
 
 #include "Processador.h"
+
+Processador::Processador(const vector <Regras> &regras) {
+    this->regras = regras;
+}
