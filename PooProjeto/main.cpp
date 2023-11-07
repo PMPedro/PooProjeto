@@ -45,9 +45,14 @@ int main() {
     getData >> comando;
     listComandos << comando << "\n";
     getData.clear();
+
+    if(comando == "clear"){
+        listComandos.clear();
     }
 
-    
+    }
+
+
 
 
 
