@@ -1,105 +1,87 @@
 #include <iostream>
 #include <string>
-#include <sstream>
 #include <iomanip>
 #include "Terminal.h"
 #include "Habitacao.h"
-#include "cstring"
-
+#include "Validacao.h"
+#include "Leitura.h"
 
 using namespace term;
 
 
-void print_size(Terminal& t) {
+/*void print_size(Terminal& t) {
     std::ostringstream o;
     o << "tamanho do terminal: " << std::setw(7) << t.getNumCols() << "x" << t.getNumRows();
     std::string str = o.str();
     t.clear();
     t << set_color(0) << move_to(t.getNumCols()-str.length(), t.getNumRows()-1) << str;
-}
+}*/
 
 
 
 int main() {
+
     Terminal &t = Terminal::instance();
-    Habitacao habi1(4,2);
+
+    //Cria habitação só para fins visuais!
+    Habitacao habi1(2,2);
     string comando;
 
 
-    std::string str_in;
-    str_in = "";
-    t >> str_in;
+    //Código Interface
+    //std::string str_in;
+    t << move_to(0,0) << "[Trabalho de POO]";
+    //str_in = "";
+    //t >> str_in;
 
-    t << move_to(5, 3) << "Habitacao:";
+    t << move_to(5, 3) << "[Habitacao]:";
     Window w = Window(5, 4, habi1.getDimX() * 5, habi1.getDimY() * 5);
 
-    t << move_to(0, t.getNumRows() /1.6 ) << "Diga as Dimensoes Aqui: ";
+    t << move_to(0, t.getNumRows() /1.6 ) << "[Terminal]";
     Window getData = Window(0, t.getNumRows() /1.5, t.getNumCols() , 5);
-    Window listComandos = Window(t.getNumCols()/1.5, 0, t.getNumCols()/3,t.getNumRows() / 2);
+    t << move_to(104, 0) << "[Lista de Comandos]:";
+    Window listComandos = Window(t.getNumCols()/1.5, 1, t.getNumCols()/3,t.getNumRows() / 2);
+
+    //Tratamento de Comandos
+    std::vector<std::string> check;
+    int conta = 1;
+    while( comando != "sair" ) {
+        getData >> comando;
+        check.clear();
+        check = trataComando(comando);
+        auto it = check.begin();
+
+        if (check.size() > 1){
+            listComandos <<"\nFicheiro:\n\n";
+            for(;it != check.end();++it){
+                listComandos << "\t" << *it;
+            }
+            getData.clear();
+        }
+        if(check[0] == "true") {
+            listComandos << "Comando '" << comando << "' validado.\n";
+            ++conta;
+            getData.clear();
+        }else if(check[0] == "false"){
+            listComandos << "Comando '"<< comando << "' Invalido.\n";
+            ++conta;
+            getData.clear();
+        }
+
+        if (conta == 19){
+            listComandos.clear();
+            conta = 1;
+        }
+
+        if(comando == "clear")
+            listComandos.clear();
 
 
-
-
-    while( comando != "exit" ) {
-        
-    getData >> comando;
-    listComandos << comando << "\n";
-    getData.clear();
-
-    if(comando == "clear"){
-        listComandos.clear();
     }
+    //Fim Tratamento de Comandos
 
-    }
+    //Fim código Interface
 
-
-
-
-
-    /*const char *str = "World";
-
-    for(int i=1; i<20; i++) {
-        t.init_color(i, i, 0);
-    }
-
-    print_size(t);
-
-
-    t << move_to(10, 1) << "Hello " << str;
-
-    for(int i=0; i<20; i++) {
-        t << move_to(20, i+3) << set_color(i) << i;
-    }
-
-
-    t << move_to(40, 3) << set_color(0) << "Carregue numa tecla";
-    t.getchar();
-
-    t.clear();
-
-    std::string str_in;
-    t << no_color() << move_to(0, 10) << "Introduza uma string: ";
-    t >> str_in;
-
-    t << move_to(5, 3) << "Escreveu:";
-    Window w = Window(5, 4, 30, 4);
-    w << set_color(1) << str_in;
-    w << no_color() << "teste";
-
-    t << move_to(0, 11) << "carregue numa tecla";
-    t.getchar();
-
-    w.clear();
-    t << move_to(0, 11) << "limpei a janela\ncarregue numa tecla";
-    t.getchar();
-
-    t << move_to(5, 3) << "Agora escreva aqui:";
-    w << set_color(2) >> str_in;
-
-    t << move_to(5, 3) << "Escreveu: " << str_in;
-
-    t.getchar();
-     */
     return 0;
 }
 

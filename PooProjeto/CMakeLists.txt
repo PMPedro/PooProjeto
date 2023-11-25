@@ -23,6 +23,6 @@ add_executable(PooProjeto main.cpp
         curses.h
         Data.cpp
         Data.h
-)
+        Validacao.cpp Validacao.h Leitura.cpp Leitura.h)
 
-target_link_libraries(${PROJECT_NAME} C:/PDCurses-3.9/wincon/pdcurses.a)
+target_link_libraries(${PROJECT_NAME} C:/Users/diogo/Downloads/PDCurses-3.9/PDCurses-3.9/wincon/pdcurses.a)
