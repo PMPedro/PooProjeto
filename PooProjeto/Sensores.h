@@ -15,6 +15,12 @@ class Sensores {
 public:
     Sensores(string Propriedade = " ", Data valor = Data());
 
+    Data getPropriedade();
+
+    void set_valor(char propriedadeLida, Data valorLido);
+
+    void update_valor(int valor);
+
 
     //NAo reage a passagem do tempo
     /*

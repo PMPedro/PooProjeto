@@ -7,9 +7,10 @@
 #include "Sensores.h"
 #include "Aparelhos.h"
 #include "Data.h"
+#define NUMAPARELHOS 7
 
 class Propriedades {
-    Sensores sensor[6];
+    Sensores sensor[NUMAPARELHOS];
     Aparelhos aparelho;
     Data temperatura; //em celcius MIN->-273
     Data luz; //Em lumens, MIN->0
@@ -23,6 +24,8 @@ public:
     Propriedades(Sensores Sensor = Sensores (), Aparelhos aparelhos = Aparelhos (), Data temperatura = Data (), Data luz = Data (), Data Rad = Data (), Data vib = Data (), Data humi = Data (), Data Fumo = Data (), Data Som = Data ());
     //ir buscar valores aos sensores
     //Usa a class Data para ter valores de char i int, tb dá struct
+
+
 
 
 };

@@ -17,6 +17,9 @@ public:
     void setQuantidade(int Quantidade);
     void setUnidade(string Unidade);
 
+    int getQuantidade();
+    string getUnidade();
+
 
 };
 

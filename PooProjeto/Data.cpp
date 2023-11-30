@@ -22,3 +22,11 @@ void Data::setQuantidade(int Quantidade) {
     this->quantidade = Quantidade;
 }
 
+int Data::getQuantidade() {
+    return this->quantidade;
+}
+
+string Data::getUnidade() {
+    return this->unidade;
+}
+

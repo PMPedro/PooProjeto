@@ -23,12 +23,12 @@ int main() {
 
     Terminal &t = Terminal::instance();
 
-    //Cria habitação só para fins visuais!
+    //Cria habitaï¿½ï¿½o sï¿½ para fins visuais!
     Habitacao habi1(2,2);
     string comando;
 
 
-    //Código Interface
+    //Cï¿½digo Interface
     //std::string str_in;
     t << move_to(0,0) << "[Trabalho de POO]";
     //str_in = "";
@@ -80,7 +80,7 @@ int main() {
     }
     //Fim Tratamento de Comandos
 
-    //Fim código Interface
+    //Fim cï¿½digo Interface
 
     return 0;
 }

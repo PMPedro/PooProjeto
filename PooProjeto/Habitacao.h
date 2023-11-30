@@ -7,6 +7,7 @@
 #include "Zonas.h"
 #include "vector"
 
+
 class Habitacao {
     vector<Zonas> zonas;
     int dimensaoX, dimensaoY;
