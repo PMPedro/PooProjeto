@@ -21,6 +21,7 @@ using namespace term;
 
 int main() {
 
+    
     Terminal &t = Terminal::instance();
 
     //Cria habita��o s� para fins visuais!
