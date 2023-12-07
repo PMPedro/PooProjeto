@@ -30,3 +30,8 @@ string Data::getUnidade() {
     return this->unidade;
 }
 
+void Data::setPropriedades(Data propriedade) {
+    this->unidade = propriedade.getUnidade();
+    this->quantidade = propriedade.getQuantidade();
+}
+

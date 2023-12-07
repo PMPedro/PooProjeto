@@ -4,22 +4,25 @@
 
 #ifndef TP_SENSORES_H
 #define TP_SENSORES_H
-#include "Regras.h"
+
 #include "Data.h"
 
-class Sensores {
-    Regras regras;
-    string propriedadeLida;
-    Data valorLido;
+class Sensor {
+    Data propriedade;
 
 public:
-    Sensores(string Propriedade = " ", Data valor = Data());
+    Sensor(Data valor = Data());
 
     Data getPropriedade();
 
-    void set_valor(char propriedadeLida, Data valorLido);
+    int getValor();
+    string getUnidade();
 
-    void update_valor(int valor);
+    void set_Propriedade(Data valorLido);
+
+    void setValor(int valor);
+
+
 
 
     //NAo reage a passagem do tempo

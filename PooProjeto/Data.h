@@ -20,6 +20,8 @@ public:
     int getQuantidade();
     string getUnidade();
 
+    void setPropriedades(Data propriedade);
+
 
 };
 

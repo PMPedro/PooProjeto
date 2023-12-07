@@ -5,38 +5,36 @@
 #include "Aparelhos.h"
 
 
-Aparelhos::Aparelhos() {
+Aparelho::Aparelho() {
     this->lampada = false;
     this->aquecedor = false;
     this->refrigerador = false;
     this->aspersor = false;
-    Processador p1;
-    this->processador = p1;
 }
 
-void Aparelhos::onOfAquecedor() {
+void Aparelho::onOfAquecedor() {
     if(!this->aquecedor){   this->aquecedor = true; }
     else{  this->aquecedor = false; }
 }
 
-void Aparelhos::onOfAspersor() {
+void Aparelho::onOfAspersor() {
     if (!this->aspersor) {  this->aspersor = true;  }
     else {  this->aspersor = false; }
 }
 
-void Aparelhos::onOfLampada() {
+void Aparelho::onOfLampada() {
     if (!this->lampada) {   this->lampada = true;   }
     else {  this->lampada = false;  }
 }
 
-void Aparelhos::onOfRefrigerador() {
+void Aparelho::onOfRefrigerador() {
     if (!this->refrigerador) {  this->refrigerador = true;  }
     else {  this->refrigerador = false; }
 }
 
 
-const bool Aparelhos::getStateAquecedor()     {   return this->aquecedor;}
-const bool Aparelhos::getStateAspersor()      {   return this->aspersor;}
-const bool Aparelhos::getStateLampada()       {   return this->lampada;}
-const bool Aparelhos::getStateRefrigerador() {    return this->refrigerador;}
+const bool Aparelho::getStateAquecedor()     {   return this->aquecedor;}
+const bool Aparelho::getStateAspersor()      {   return this->aspersor;}
+const bool Aparelho::getStateLampada()       {   return this->lampada;}
+const bool Aparelho::getStateRefrigerador() {    return this->refrigerador;}
 

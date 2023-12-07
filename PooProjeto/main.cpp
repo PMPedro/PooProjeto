@@ -21,12 +21,13 @@ using namespace term;
 
 int main() {
 
-    
+    getchar();
     Terminal &t = Terminal::instance();
 
     //Cria habita��o s� para fins visuais!
     Habitacao habi1(2,2);
     string comando;
+
 
 
     //C�digo Interface

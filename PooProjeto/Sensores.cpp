@@ -4,26 +4,27 @@
 
 #include "Sensores.h"
 
-Sensores::Sensores(std::string Propriedade, Data valor) {
-
-    this->regras = Regras();
-    this->propriedadeLida = Propriedade;
-    this->valorLido = valor;
+Sensor::Sensor(Data valor) {
+    this->propriedade.setPropriedades(valor);
 }
 
-Data Sensores::getPropriedade() {
-    return valorLido;
+Data Sensor::getPropriedade() {
+    return this->propriedade;
 }
 
-
-void Sensores::set_valor(char propriedadeLida, Data valorLido) {
-    this->propriedadeLida = propriedadeLida;
-    this->valorLido = valorLido;
+string Sensor::getUnidade() {
+    return this->getUnidade();
 }
 
-void Sensores::update_valor(int valor) {
-    int aux = this->valorLido.getQuantidade();
+int Sensor::getValor() {
+    return this->getValor();
 }
 
+void Sensor::set_Propriedade(Data valorLido) {
+    this->propriedade.setPropriedades(valorLido);
+}
 
+void Sensor::setValor(int valor) {
+    this->propriedade.setQuantidade(valor);
+}
 

@@ -9,18 +9,20 @@
 
 
 class Habitacao {
-    vector<Zonas> zonas;
+    vector<Zona> zonas;
     int dimensaoX, dimensaoY;
 
 public:
-    Habitacao(int dimensaoX = 0, int dimensaoY = 0, const vector<Zonas>& zonas = vector<Zonas>());
+    Habitacao(int dimensaoX = 0, int dimensaoY = 0, const vector<Zona>& zonas = vector<Zona>());
 
     bool veriTamanho(int x, int y);
     void setDimensaoX(int x);
     void setDimensaoY(int y);
-    void addZonas (Zonas zona);
+    void addZonas (Zona zona);
     int getDimX();
     int getDimY();
+
+
 
 
 

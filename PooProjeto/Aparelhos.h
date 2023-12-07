@@ -4,16 +4,15 @@
 
 #ifndef TP_APARELHOS_H
 #define TP_APARELHOS_H
-#include "Processador.h"
 
-class Aparelhos {
-    Processador processador;
+
+class Aparelho {
     bool aquecedor;
     bool aspersor;
     bool refrigerador;
     bool lampada;
 public:
-    Aparelhos();
+    Aparelho();
 
     void onOfAquecedor();
     void onOfAspersor();

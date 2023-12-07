@@ -4,17 +4,15 @@
 
 #include "Propriedades.h"
 
-Propriedades::Propriedades(Sensores Sensor, Aparelhos aparelhos, Data temperatura, Data luz, Data Rad, Data vib,  Data humi, Data Fumo, Data Som) {
-    for(int i=0;i<=6;i++){
-    this->sensor[i] = Sensor;
-    }
-    this->aparelho = aparelhos;
-    this->temperatura = temperatura;
-    this->luz = luz;
-    this->radiacao = Rad;
-    this->vibracao = vib;
-    this->humidade = humi;
-    this->fumo = Fumo;
-    this->som = Som;
-}
+Propriedade::Propriedade(Data temp, Data luz, Data rad, Data vib, Data hum, Data fum, Data som) {
+    this->fumo.setPropriedades(fum);
+    this->humidade.setPropriedades(hum);
+    this->vibracao.setPropriedades(vib);
+    this->radiacao.setPropriedades(rad);
+    this->luz.setPropriedades(luz);
+    this->temperatura.setPropriedades(luz);
+    this->som.setPropriedades(som);
 
+
+
+}
