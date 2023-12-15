@@ -23,7 +23,22 @@ add_executable(PooProjeto main.cpp
         curses.h
         Data.cpp
         Data.h
-        Validacao.cpp Validacao.h Leitura.cpp Leitura.h)
+        Validacao.cpp Validacao.h Leitura.cpp Leitura.h
+        Sensores/sensTemperatura.cpp
+        Sensores/sensTemperatura.h
+        Sensores/sensorLuz.cpp
+        Sensores/sensorLuz.h
+        Sensores/sensorRadiacao.cpp
+        Sensores/sensorRadiacao.h
+        Sensores/sensorVibracao.cpp
+        Sensores/sensorVibracao.h
+        Sensores/sensorHumidade.cpp
+        Sensores/sensorHumidade.h
+        Sensores/sensorFumo.cpp
+        Sensores/sensorFumo.h
+        Sensores/sensorSom.cpp
+        Sensores/sensorSom.h
+        Sensores/headerSensores.h)
 
 
 #target_link_libraries(${PROJECT_NAME} C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/PooProjeto/PDCurses-3.9/wincon/pdcurses.a)

@@ -6,20 +6,15 @@
 #define TP_SENSORES_H
 
 #include "Data.h"
+#include "Propriedades.h"
 
 class Sensor {
-    Data propriedade;
+    int valor;
 
 public:
-    Sensor(Data valor = Data());
-
-    Data getPropriedade();
+    Sensor(int v = 0);
 
     int getValor();
-    string getUnidade();
-
-    void set_Propriedade(Data valorLido);
-
     void setValor(int valor);
 
 

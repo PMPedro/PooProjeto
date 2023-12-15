@@ -4,27 +4,16 @@
 
 #include "Sensores.h"
 
-Sensor::Sensor(Data valor) {
-    this->propriedade.setPropriedades(valor);
-}
 
-Data Sensor::getPropriedade() {
-    return this->propriedade;
-}
-
-string Sensor::getUnidade() {
-    return this->getUnidade();
+Sensor::Sensor(int valor) {
+    this->valor = valor;
 }
 
 int Sensor::getValor() {
     return this->getValor();
 }
 
-void Sensor::set_Propriedade(Data valorLido) {
-    this->propriedade.setPropriedades(valorLido);
-}
-
 void Sensor::setValor(int valor) {
-    this->propriedade.setQuantidade(valor);
+    this->valor = valor;
 }
 

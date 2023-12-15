@@ -7,6 +7,11 @@
 #include "Sensores.h"
 #include "Aparelhos.h"
 #include "Data.h"
+#include "Sensores.h"
+
+
+
+class Sensor;
 #define NUMAPARELHOS 7
 
 class Propriedade {
@@ -19,6 +24,7 @@ class Propriedade {
     Data som; //Decibeis MIN->0
 
 public:
+
     Propriedade(Data temp = Data(), Data luz = Data(), Data rad = Data(),
                  Data vib = Data(), Data hum = Data(), Data fum = Data(),
                  Data som = Data()
