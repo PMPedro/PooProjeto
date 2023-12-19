@@ -14,8 +14,4 @@ Propriedade::Propriedade(Data temp, Data luz, Data rad, Data vib, Data hum, Data
     this->luz.setPropriedades(luz);
     this->temperatura.setPropriedades(luz);
     this->som.setPropriedades(som);
-
-
-
-
 }

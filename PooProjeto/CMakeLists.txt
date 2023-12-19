@@ -38,7 +38,12 @@ add_executable(PooProjeto main.cpp
         Sensores/sensorFumo.h
         Sensores/sensorSom.cpp
         Sensores/sensorSom.h
-        Sensores/headerSensores.h)
+        Sensores/headerSensores.h
+        MyPointer.cpp
+        MyPointer.h
+        Regras/Regras_Humidade.cpp
+        Regras/Regras_Humidade.h
+        Regras/HeaderRegras.h)
 
 
 #target_link_libraries(${PROJECT_NAME} C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/PooProjeto/PDCurses-3.9/wincon/pdcurses.a)

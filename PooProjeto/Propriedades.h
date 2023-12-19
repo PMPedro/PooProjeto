@@ -13,6 +13,8 @@
 
 class Sensor;
 #define NUMAPARELHOS 7
+//Ir buscar valores aos respetivos sensores
+//fazer include do header dos sensores
 
 class Propriedade {
     Data temperatura; //em celcius MIN->-273

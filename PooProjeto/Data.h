@@ -5,6 +5,7 @@
 #ifndef POOPROJETO_DATA_H
 #define POOPROJETO_DATA_H
 #include "string"
+//Classe para ajudar nas propriedades, para n termos de ter int valor, string unidade para cada propriedade
 using namespace std;
 
 class Data {

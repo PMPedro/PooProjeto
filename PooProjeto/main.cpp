@@ -7,7 +7,7 @@
 #include "Leitura.h"
 
 using namespace term;
-
+#include "MyPointer.h"
 
 /*void print_size(Terminal& t) {
     std::ostringstream o;
@@ -23,6 +23,11 @@ int main() {
 
     getchar();
     Terminal &t = Terminal::instance();
+    MyPointer<Habitacao> ptr(new Habitacao);
+    //ptr = new Habitacao(1 , 2);
+    ptr->getDimY();
+    Habitacao la();
+
 
     //Cria habita��o s� para fins visuais!
     Habitacao habi1(2,2);

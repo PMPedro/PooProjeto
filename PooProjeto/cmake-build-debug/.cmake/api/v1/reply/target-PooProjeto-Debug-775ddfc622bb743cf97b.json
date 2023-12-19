@@ -34,7 +34,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 46,
+				"line" : 51,
 				"parent" : 0
 			}
 		]
@@ -77,7 +77,9 @@
 				30,
 				32,
 				34,
-				36
+				36,
+				39,
+				41
 			]
 		}
 	],
@@ -137,7 +139,9 @@
 				30,
 				32,
 				34,
-				36
+				36,
+				39,
+				41
 			]
 		},
 		{
@@ -163,7 +167,10 @@
 				33,
 				35,
 				37,
-				38
+				38,
+				40,
+				42,
+				43
 			]
 		}
 	],
@@ -381,6 +388,33 @@
 		{
 			"backtrace" : 1,
 			"path" : "Sensores/headerSensores.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "MyPointer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "MyPointer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Regras/Regras_Humidade.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Regras/Regras_Humidade.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Regras/HeaderRegras.h",
 			"sourceGroupIndex" : 1
 		}
 	],

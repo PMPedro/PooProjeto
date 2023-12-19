@@ -7,11 +7,14 @@
 
 using namespace std;
 #include "iostream"
+//FALTA ALTERAR
+//ter apenas X, Y, e as regras
+//dps nos filhos, vai ser geridos se n ultrapassa os valores possiveis da propriedade defenida e redefenicao das regras (caso necessario) 
 
 class Regras {
     int x;
     int y;
-    int qualRegra; //
+    int qualRegra;
 
 public:
 
