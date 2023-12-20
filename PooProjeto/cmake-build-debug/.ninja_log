@@ -1,7 +1,7 @@
 # ninja log v5
 14	1162	7243545670163746	CMakeFiles/PooProjeto.dir/Zonas.cpp.obj	97decb9bc235edcf
 30	537	7243384603939158	CMakeFiles/PooProjeto.dir/Aparelhos.cpp.obj	58adca9243095561
-4	403	7247065560881472	build.ninja	52ce16b4c87a1865
+4	403	7247760930763120	build.ninja	52ce16b4c87a1865
 17	2543	7247030681419749	CMakeFiles/PooProjeto.dir/main.cpp.obj	90803a7f1d010c87
 18	795	7243545666483747	CMakeFiles/PooProjeto.dir/Sensores.cpp.obj	95034a4584fe8c25
 25	2327	7247030679223881	CMakeFiles/PooProjeto.dir/Propriedades.cpp.obj	346febe18993c42

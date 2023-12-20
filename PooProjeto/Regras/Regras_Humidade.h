@@ -1,8 +1,0 @@
-//
-// Created by pmanu on 19/12/2023.
-//
-
-#ifndef POOPROJETO_REGRAS_HUMIDADE_H
-#define POOPROJETO_REGRAS_HUMIDADE_H
-
-#endif //POOPROJETO_REGRAS_HUMIDADE_H

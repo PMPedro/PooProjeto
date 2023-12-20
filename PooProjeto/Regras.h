@@ -12,17 +12,17 @@ using namespace std;
 //dps nos filhos, vai ser geridos se n ultrapassa os valores possiveis da propriedade defenida e redefenicao das regras (caso necessario) 
 
 class Regras {
-    int x;
-    int y;
-    int qualRegra;
+    int valor; //valor a ser comparado
+
 
 public:
 
-    Regras(int x=0, int regra = 0, int y = 0);
-    void setRegra(int regra, int x = 0, int y = 0);
-    void setX(int x);
-    void setY(int Y);
-    bool obterValorRegra(int valor);
+    Regras(int valor = 0);
+
+    void setValor(int x);
+    int getValor();
+    ~Regras();
+
 
     /*Fazer->
      *  igual_a(x)  ->1
