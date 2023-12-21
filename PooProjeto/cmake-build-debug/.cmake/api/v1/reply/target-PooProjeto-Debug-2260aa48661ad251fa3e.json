@@ -188,8 +188,7 @@
 				49,
 				51,
 				53,
-				55,
-				56
+				55
 			]
 		}
 	],
@@ -500,11 +499,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "Regras/regrasTemperatura.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "Regras/header.h",
 			"sourceGroupIndex" : 1
 		}
 	],
