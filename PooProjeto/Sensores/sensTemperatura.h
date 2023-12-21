@@ -6,7 +6,7 @@
 #define TP_SENSTEMPERATURA_H
 #include "iostream"
 using namespace std;
-#include "../Sensores.h"
+#include "../Sensor.h"
 
 class SensorTemperatura : public Sensor {
     string unidade;

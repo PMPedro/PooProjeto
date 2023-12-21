@@ -6,7 +6,7 @@
 #define TP_SENSORLUZ_H
 
 
-#include "../Sensores.h"
+#include "../Sensor.h"
 
 
 class sensorLuz:public Sensor {

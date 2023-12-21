@@ -4,7 +4,7 @@
 
 #ifndef TP_SENSORRADIACAO_H
 #define TP_SENSORRADIACAO_H
-#include "../Sensores.h"
+#include "../Sensor.h"
 
 class sensorRadiacao : Sensor {
     string unidade;

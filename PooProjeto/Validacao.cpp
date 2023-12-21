@@ -3,7 +3,7 @@
 //
 #include "Validacao.h"
 #include "Leitura.h"
-
+#include "Executa.h"
 //Funções para verificar a sintaxe dos comandos com mais do que a keyword
 bool veriAvanca(const std::string& comando) {
     std::istringstream iss(comando);
@@ -353,7 +353,7 @@ std::vector<std::string> trataComando(const std::string&comando){
         }
     }else if(limpo == "hnova"){
         if(veriHnova(comando)){
-            //execAvanca();
+            execHnova(comando);
             return {"true"};
         }else{
             return {"false"};
