@@ -3,7 +3,6 @@
 //
 
 #include "Interface.h"
-#include "Habitacao.h"
 #include <sstream>
 #include <fstream>
 
@@ -520,13 +519,4 @@ std::vector<std::string> Interface::trataComando(const std::string&comando){
     return {"false"};
 }
 
-int Interface::execHnova(std::string comando){
-    std::istringstream iss(comando);
 
-    std::string keyword;
-    int nLinhas, nColunas;
-    iss >> keyword >> nLinhas >> nColunas;
-    std::cout << nLinhas << std::endl;
-    std::cout << nColunas << std::endl;
-    return 1;
-}

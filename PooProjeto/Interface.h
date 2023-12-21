@@ -11,7 +11,6 @@
 class Interface {
 public:
     std::vector<std::string> trataComando(const std::string&comando);
-
 private:
     std::vector<std::string> leFicheiro(const std::string& nFicheiro);
     std::string limpaComando(const std::string&comando);
@@ -35,7 +34,6 @@ private:
     bool veriPrepoe(const std::string&comando);
     bool veriPrem(const std::string&comando);
     std::string veriExec(const std::string&comando);
-    int execHnova(std::string comando);
 };
 
 
