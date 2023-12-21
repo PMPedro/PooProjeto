@@ -7,6 +7,7 @@
 using namespace term;
 
 int main() {
+    cout << "SIGA SIGA";
     ::getchar();
     Terminal &t = Terminal::instance();
     string comando;
@@ -67,4 +68,3 @@ int main() {
 
     return 0;
 }
-
