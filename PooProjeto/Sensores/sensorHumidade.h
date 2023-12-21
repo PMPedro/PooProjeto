@@ -4,7 +4,7 @@
 
 #ifndef TP_SENSORHUMIDADE_H
 #define TP_SENSORHUMIDADE_H
-#include "../Sensores.h"
+#include "../Sensor.h"
 
 class sensorHumidade : Sensor {
     string unidade;

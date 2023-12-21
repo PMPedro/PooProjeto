@@ -1,11 +1,40 @@
 //
-// Created by diogo on 11/23/2023.
+// Created by diogo on 12/21/2023.
 //
-#include "Validacao.h"
-#include "Leitura.h"
 
+#include "Interface.h"
+#include "Habitacao.h"
+#include <sstream>
+#include <fstream>
+
+std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro){
+    std::ifstream ifich(nFicheiro);
+    std::string linha;
+    std::vector<std::string> resultado;
+    std::vector<std::string> trataLinha;
+    if (!ifich.is_open()) {
+        std::cerr << "Erro na Abertura: " << nFicheiro << std::endl;
+        return {"OP_ERROR"};//codigo para erro de abertura(inventado agr haha)
+    }
+
+
+    while(getline(ifich,linha)){
+
+        trataLinha.clear();
+        trataLinha = trataComando(linha);
+
+
+        if (trataLinha[0] == "true"){
+            resultado.push_back("Comando '" + linha + "' validado\n");
+        }else if(trataLinha[0] == "false"){
+            continue;
+        }
+    }
+    ifich.close();
+    return resultado;
+}
 //Funções para verificar a sintaxe dos comandos com mais do que a keyword
-bool veriAvanca(const std::string& comando) {
+bool Interface::veriAvanca(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -22,7 +51,7 @@ bool veriAvanca(const std::string& comando) {
     return true;
 }
 
-bool veriHnova(const std::string& comando) {
+bool Interface::veriHnova(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -36,7 +65,7 @@ bool veriHnova(const std::string& comando) {
     return true;
 }
 
-bool veriZnova(const std::string& comando) {
+bool Interface::veriZnova(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -50,7 +79,7 @@ bool veriZnova(const std::string& comando) {
     return true;
 }
 
-bool veriZrem(const std::string& comando) {
+bool Interface::veriZrem(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -64,7 +93,7 @@ bool veriZrem(const std::string& comando) {
     return true;
 }
 
-bool veriZcomp(const std::string& comando) {
+bool Interface::veriZcomp(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -78,7 +107,7 @@ bool veriZcomp(const std::string& comando) {
     return true;
 }
 
-bool veriZprops(const std::string& comando) {
+bool Interface::veriZprops(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -92,7 +121,7 @@ bool veriZprops(const std::string& comando) {
     return true;
 }
 
-bool veriPmod(const std::string& comando) {
+bool Interface::veriPmod(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -107,7 +136,7 @@ bool veriPmod(const std::string& comando) {
     return true;
 }
 
-bool veriCnovo(const std::string& comando) {
+bool Interface::veriCnovo(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -126,7 +155,7 @@ bool veriCnovo(const std::string& comando) {
     return true;
 }
 
-bool veriCrem(const std::string& comando) {
+bool Interface::veriCrem(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -145,7 +174,7 @@ bool veriCrem(const std::string& comando) {
     return true;
 }
 
-bool veriRnova(const std::string& comando) {
+bool Interface::veriRnova(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -172,7 +201,7 @@ bool veriRnova(const std::string& comando) {
     return true;
 }
 
-bool veriPmuda(const std::string& comando) {
+bool Interface::veriPmuda(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -187,7 +216,7 @@ bool veriPmuda(const std::string& comando) {
     return true;
 }
 
-bool veriRlista(const std::string& comando) {
+bool Interface::veriRlista(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -201,7 +230,7 @@ bool veriRlista(const std::string& comando) {
     return true;
 }
 
-bool veriRrem(const std::string& comando) {
+bool Interface::veriRrem(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -215,7 +244,7 @@ bool veriRrem(const std::string& comando) {
     return true;
 }
 
-bool veriAsoc(const std::string& comando) {
+bool Interface::veriAsoc(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -229,7 +258,7 @@ bool veriAsoc(const std::string& comando) {
     return true;
 }
 
-bool veriAdes(const std::string& comando) {
+bool Interface::veriAdes(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -243,7 +272,7 @@ bool veriAdes(const std::string& comando) {
     return true;
 }
 
-bool veriAcom(const std::string& comando) {
+bool Interface::veriAcom(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -258,7 +287,7 @@ bool veriAcom(const std::string& comando) {
     return true;
 }
 
-bool veriPsalva(const std::string& comando) {
+bool Interface::veriPsalva(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -273,7 +302,7 @@ bool veriPsalva(const std::string& comando) {
     return true;
 }
 
-bool veriPrepoe(const std::string& comando) {
+bool Interface::veriPrepoe(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -287,7 +316,7 @@ bool veriPrepoe(const std::string& comando) {
     return true;
 }
 
-bool veriPrem(const std::string& comando) {
+bool Interface::veriPrem(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -301,7 +330,7 @@ bool veriPrem(const std::string& comando) {
     return true;
 }
 
-std::string veriExec(const std::string& comando) {
+std::string Interface::veriExec(const std::string& comando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -315,9 +344,7 @@ std::string veriExec(const std::string& comando) {
     return nFich;
 }
 
-
-//Função Auxiliar para apanhar a keyword do comando
-std::string limpaComando(const std::string&comando){
+std::string Interface::limpaComando(const std::string&comando){
     std::string final = comando;
     int pos = final.find(' ');
     if(pos !=std::string::npos){
@@ -328,8 +355,7 @@ std::string limpaComando(const std::string&comando){
     }
 }
 
-//Função que trata os Comandos
-std::vector<std::string> trataComando(const std::string&comando){
+std::vector<std::string> Interface::trataComando(const std::string&comando){
     std::string limpo = limpaComando(comando);
     //std::cout << "Comando limpo: "<< limpo<< std::endl;
     if(comando == "prox"){
@@ -353,7 +379,7 @@ std::vector<std::string> trataComando(const std::string&comando){
         }
     }else if(limpo == "hnova"){
         if(veriHnova(comando)){
-            //execAvanca();
+            //execHnova(comando);
             return {"true"};
         }else{
             return {"false"};
@@ -492,4 +518,15 @@ std::vector<std::string> trataComando(const std::string&comando){
         }
     }
     return {"false"};
+}
+
+int Interface::execHnova(std::string comando){
+    std::istringstream iss(comando);
+
+    std::string keyword;
+    int nLinhas, nColunas;
+    iss >> keyword >> nLinhas >> nColunas;
+    std::cout << nLinhas << std::endl;
+    std::cout << nColunas << std::endl;
+    return 1;
 }

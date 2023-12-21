@@ -5,7 +5,7 @@
 #ifndef TP_ZONAS_H
 #define TP_ZONAS_H
 #include "Propriedades.h"
-#include "Sensores.h"
+#include "Sensor.h"
 #include "Aparelhos.h"
 #include "Processador.h"
 #include "Data.h"

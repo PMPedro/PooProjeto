@@ -2,7 +2,7 @@
 // Created by pmanu on 28/10/2023.
 //
 
-#include "Sensores.h"
+#include "Sensor.h"
 
 
 Sensor::Sensor(int valor) {

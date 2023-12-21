@@ -4,7 +4,7 @@
 
 #ifndef TP_SENSORFUMO_H
 #define TP_SENSORFUMO_H
-#include "../Sensores.h"
+#include "../Sensor.h"
 
 class sensorFumo : Sensor {
     string unidade;

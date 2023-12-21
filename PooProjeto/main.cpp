@@ -1,70 +1,39 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
 #include "Terminal.h"
 #include "Habitacao.h"
-#include "Validacao.h"
-#include "Leitura.h"
+#include "Interface.h"
 
 using namespace term;
-#include "MyPointer.h"
-
-/*void print_size(Terminal& t) {
-    std::ostringstream o;
-    o << "tamanho do terminal: " << std::setw(7) << t.getNumCols() << "x" << t.getNumRows();
-    std::string str = o.str();
-    t.clear();
-    t << set_color(0) << move_to(t.getNumCols()-str.length(), t.getNumRows()-1) << str;
-}*/
-
-
 
 int main() {
 
-    getchar();
     Terminal &t = Terminal::instance();
-    MyPointer<Habitacao> ptr(new Habitacao);
-    //ptr = new Habitacao(1 , 2);
-    ptr->getDimY();
-    Habitacao la();
-
-
-    //Cria habita��o s� para fins visuais!
-    Habitacao habi1(2,2);
     string comando;
-
-
-
-    //C�digo Interface
-    //std::string str_in;
+    Habitacao habitacao;
+    Interface interface;
+    //Código Interface
+    //texto
     t << move_to(0,0) << "[Trabalho de POO]";
-    //str_in = "";
-    //t >> str_in;
-
-    t << move_to(5, 3) << "[Habitacao]:";
-    Window w = Window(5, 4, habi1.getDimX() * 5, habi1.getDimY() * 5);
-
-    t << move_to(0, t.getNumRows() /1.6 ) << "[Terminal]";
-    Window getData = Window(0, t.getNumRows() /1.5, t.getNumCols() , 5);
+    t << move_to(0, 3) << "[Habitacao]:";
+    t << move_to(0, 34 ) << "[Terminal]";
     t << move_to(104, 0) << "[Lista de Comandos]:";
+
+    //cria as janelas de output de texto e o terminal de input do dono
+    Window getData = Window(0, 35, t.getNumCols() , 5);
     Window listComandos = Window(t.getNumCols()/1.5, 1, t.getNumCols()/3,t.getNumRows() / 2);
 
     //Tratamento de Comandos
     std::vector<std::string> check;
     int conta = 1;
+
     while( comando != "sair" ) {
         getData >> comando;
         check.clear();
-        check = trataComando(comando);
+        check = interface.trataComando(comando);
+
         auto it = check.begin();
 
-        if (check.size() > 1){
-            listComandos <<"\nFicheiro:\n\n";
-            for(;it != check.end();++it){
-                listComandos << "\t" << *it;
-            }
-            getData.clear();
-        }
         if(check[0] == "true") {
             listComandos << "Comando '" << comando << "' validado.\n";
             ++conta;
@@ -75,6 +44,14 @@ int main() {
             getData.clear();
         }
 
+        //caso do exec
+        if (check.size() > 1){
+            listComandos <<"\nFicheiro:\n\n";
+            for(;it != check.end();++it){
+                listComandos << "\t" << *it;
+            }
+            getData.clear();
+        }
         if (conta == 19){
             listComandos.clear();
             conta = 1;
@@ -83,11 +60,10 @@ int main() {
         if(comando == "clear")
             listComandos.clear();
 
-
     }
     //Fim Tratamento de Comandos
 
-    //Fim c�digo Interface
+    //Fim código Interface
 
     return 0;
 }

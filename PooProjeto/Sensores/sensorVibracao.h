@@ -4,7 +4,7 @@
 
 #ifndef TP_SENSORVIBRACAO_H
 #define TP_SENSORVIBRACAO_H
-#include "../Sensores.h"
+#include "../Sensor.h"
 
 class sensorVibracao : Sensor{
     string unidade;
