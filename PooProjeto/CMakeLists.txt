@@ -23,7 +23,6 @@ add_executable(PooProjeto main.cpp
         curses.h
         Data.cpp
         Data.h
-        Validacao.cpp Validacao.h Leitura.cpp Leitura.h
         Sensores/sensTemperatura.cpp
         Sensores/sensTemperatura.h
         Sensores/sensorLuz.cpp
@@ -56,7 +55,7 @@ add_executable(PooProjeto main.cpp
         Regras/regrasVibracao.h
         Regras/regrasTemperatura.cpp
         Regras/regrasTemperatura.h
-        Executa.h Executa.cpp Interface.cpp Interface.h)
+        Interface.cpp Interface.h)
 
 
 #target_link_libraries(${PROJECT_NAME} C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/PooProjeto/PDCurses-3.9/wincon/pdcurses.a)

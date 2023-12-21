@@ -109,18 +109,6 @@ build CMakeFiles/PooProjeto.dir/Data.cpp.obj: CXX_COMPILER__PooProjeto_unscanned
   OBJECT_DIR = CMakeFiles\PooProjeto.dir
   OBJECT_FILE_DIR = CMakeFiles\PooProjeto.dir
 
-build CMakeFiles/PooProjeto.dir/Validacao.cpp.obj: CXX_COMPILER__PooProjeto_unscanned_Debug C$:/Users/diogo/POO/PooProjeto/PooProjeto/Validacao.cpp || cmake_object_order_depends_target_PooProjeto
-  DEP_FILE = CMakeFiles\PooProjeto.dir\Validacao.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\PooProjeto.dir
-  OBJECT_FILE_DIR = CMakeFiles\PooProjeto.dir
-
-build CMakeFiles/PooProjeto.dir/Leitura.cpp.obj: CXX_COMPILER__PooProjeto_unscanned_Debug C$:/Users/diogo/POO/PooProjeto/PooProjeto/Leitura.cpp || cmake_object_order_depends_target_PooProjeto
-  DEP_FILE = CMakeFiles\PooProjeto.dir\Leitura.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\PooProjeto.dir
-  OBJECT_FILE_DIR = CMakeFiles\PooProjeto.dir
-
 build CMakeFiles/PooProjeto.dir/Sensores/sensTemperatura.cpp.obj: CXX_COMPILER__PooProjeto_unscanned_Debug C$:/Users/diogo/POO/PooProjeto/PooProjeto/Sensores/sensTemperatura.cpp || cmake_object_order_depends_target_PooProjeto
   DEP_FILE = CMakeFiles\PooProjeto.dir\Sensores\sensTemperatura.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
@@ -211,12 +199,6 @@ build CMakeFiles/PooProjeto.dir/Regras/regrasTemperatura.cpp.obj: CXX_COMPILER__
   OBJECT_DIR = CMakeFiles\PooProjeto.dir
   OBJECT_FILE_DIR = CMakeFiles\PooProjeto.dir\Regras
 
-build CMakeFiles/PooProjeto.dir/Executa.cpp.obj: CXX_COMPILER__PooProjeto_unscanned_Debug C$:/Users/diogo/POO/PooProjeto/PooProjeto/Executa.cpp || cmake_object_order_depends_target_PooProjeto
-  DEP_FILE = CMakeFiles\PooProjeto.dir\Executa.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\PooProjeto.dir
-  OBJECT_FILE_DIR = CMakeFiles\PooProjeto.dir
-
 build CMakeFiles/PooProjeto.dir/Interface.cpp.obj: CXX_COMPILER__PooProjeto_unscanned_Debug C$:/Users/diogo/POO/PooProjeto/PooProjeto/Interface.cpp || cmake_object_order_depends_target_PooProjeto
   DEP_FILE = CMakeFiles\PooProjeto.dir\Interface.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
@@ -231,7 +213,7 @@ build CMakeFiles/PooProjeto.dir/Interface.cpp.obj: CXX_COMPILER__PooProjeto_unsc
 #############################################
 # Link the executable PooProjeto.exe
 
-build PooProjeto.exe: CXX_EXECUTABLE_LINKER__PooProjeto_Debug CMakeFiles/PooProjeto.dir/main.cpp.obj CMakeFiles/PooProjeto.dir/Regras.cpp.obj CMakeFiles/PooProjeto.dir/Processador.cpp.obj CMakeFiles/PooProjeto.dir/Aparelhos.cpp.obj CMakeFiles/PooProjeto.dir/Sensores.cpp.obj CMakeFiles/PooProjeto.dir/Propriedades.cpp.obj CMakeFiles/PooProjeto.dir/Zonas.cpp.obj CMakeFiles/PooProjeto.dir/Habitacao.cpp.obj CMakeFiles/PooProjeto.dir/Terminal.cpp.obj CMakeFiles/PooProjeto.dir/Data.cpp.obj CMakeFiles/PooProjeto.dir/Validacao.cpp.obj CMakeFiles/PooProjeto.dir/Leitura.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensTemperatura.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorLuz.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorRadiacao.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorVibracao.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorHumidade.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorFumo.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorSom.cpp.obj CMakeFiles/PooProjeto.dir/MyPointer.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasHumidade.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasFumo.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasLuz.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasRadiacao.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasSom.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasVibracao.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasTemperatura.cpp.obj CMakeFiles/PooProjeto.dir/Executa.cpp.obj CMakeFiles/PooProjeto.dir/Interface.cpp.obj | C$:/Users/diogo/POO/PooProjeto/PooProjeto/external/PDCurses-3.9/wincon/pdcurses.a
+build PooProjeto.exe: CXX_EXECUTABLE_LINKER__PooProjeto_Debug CMakeFiles/PooProjeto.dir/main.cpp.obj CMakeFiles/PooProjeto.dir/Regras.cpp.obj CMakeFiles/PooProjeto.dir/Processador.cpp.obj CMakeFiles/PooProjeto.dir/Aparelhos.cpp.obj CMakeFiles/PooProjeto.dir/Sensores.cpp.obj CMakeFiles/PooProjeto.dir/Propriedades.cpp.obj CMakeFiles/PooProjeto.dir/Zonas.cpp.obj CMakeFiles/PooProjeto.dir/Habitacao.cpp.obj CMakeFiles/PooProjeto.dir/Terminal.cpp.obj CMakeFiles/PooProjeto.dir/Data.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensTemperatura.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorLuz.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorRadiacao.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorVibracao.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorHumidade.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorFumo.cpp.obj CMakeFiles/PooProjeto.dir/Sensores/sensorSom.cpp.obj CMakeFiles/PooProjeto.dir/MyPointer.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasHumidade.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasFumo.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasLuz.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasRadiacao.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasSom.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasVibracao.cpp.obj CMakeFiles/PooProjeto.dir/Regras/regrasTemperatura.cpp.obj CMakeFiles/PooProjeto.dir/Interface.cpp.obj | C$:/Users/diogo/POO/PooProjeto/PooProjeto/external/PDCurses-3.9/wincon/pdcurses.a
   FLAGS = -g
   LINK_LIBRARIES = C:/Users/diogo/POO/PooProjeto/PooProjeto/external/PDCurses-3.9/wincon/pdcurses.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\PooProjeto.dir
