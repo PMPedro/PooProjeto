@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 #include "Terminal.h"
 #include "Habitacao.h"
