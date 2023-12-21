@@ -3,12 +3,22 @@
 #include "Terminal.h"
 #include "Habitacao.h"
 #include "Interface.h"
+#include <csignal>
+
 
 using namespace term;
 
+void handleResize(int sig) {
+    endwin();  // End the curses mode to reinitialize with new dimensions
+    refresh();
+    // Handle resize if necessary
+}
 int main() {
     cout << "SIGA SIGA";
     ::getchar();
+    initscr();
+    endwin();
+
     Terminal &t = Terminal::instance();
     string comando;
     Habitacao habitacao;
