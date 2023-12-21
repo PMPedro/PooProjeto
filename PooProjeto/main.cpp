@@ -7,7 +7,7 @@
 using namespace term;
 
 int main() {
-
+getchar();
     Terminal &t = Terminal::instance();
     string comando;
     Habitacao habitacao;
