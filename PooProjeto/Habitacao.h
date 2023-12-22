@@ -17,12 +17,13 @@ class Habitacao {
 public:
     Habitacao(int dimensaoX = 0, int dimensaoY = 0, const vector<Zona>& zonas = vector<Zona>());
 
-    bool veriTamanho(int x, int y);
+    void veriTamanho(int *x);
     void setDimensaoX(int x);
     void setDimensaoY(int y);
     void addZonas (Zona zona);
     int getDimX();
     int getDimY();
+    bool checkZonasQuant();
 
 
 

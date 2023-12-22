@@ -4,7 +4,7 @@
 #include "Habitacao.h"
 #include "Interface.h"
 #include <csignal>
-
+#include "interfaceClassTesting.h"
 
 using namespace term;
 
@@ -14,12 +14,15 @@ void handleResize(int sig) {
     // Handle resize if necessary
 }
 int main() {
-    cout << "SIGA SIGA";
-    ::getchar();
+   /* ::getchar();
     initscr();
-    endwin();
+    endwin();*/
+    interfaceClassTesting a(5,5,1,1);
+    getchar();
 
     Terminal &t = Terminal::instance();
+
+
     string comando;
     Habitacao habitacao;
     Interface interface;

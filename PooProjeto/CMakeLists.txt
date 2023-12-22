@@ -55,7 +55,11 @@ add_executable(PooProjeto main.cpp
         Regras/regrasVibracao.h
         Regras/regrasTemperatura.cpp
         Regras/regrasTemperatura.h
-        Interface.cpp Interface.h)
+        Interface.cpp Interface.h
+        interfaceClassTesting.cpp
+        interfaceClassTesting.h
+        window.cpp
+        window.h)
 
 
 #target_link_libraries(${PROJECT_NAME} C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/PooProjeto/PDCurses-3.9/wincon/pdcurses.a)
