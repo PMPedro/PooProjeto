@@ -4,12 +4,13 @@
 
 #include "sensorRadiacao.h"
 
-int sensorRadiacao::getValor() {
-    return this->getValor();
+Data sensorRadiacao::getRad() {
+    Data x(this->getValorSensor(), this->unidade);
+    return x;
 }
 
-void sensorRadiacao::setValor(int valor) {
-    this->setValor(valor);
+void sensorRadiacao::setRad(int valor) {
+    this->setValorSensor(valor);
 
 }
 sensorRadiacao::~sensorRadiacao() {

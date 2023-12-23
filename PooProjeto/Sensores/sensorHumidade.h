@@ -11,6 +11,7 @@ class sensorHumidade : Sensor {
 public:
     sensorHumidade(int valor = 0) : Sensor(valor), unidade("%") {};
     void setHumidade(int valor);
-    int getHumidade();
+    Data getHumidade();
+    ~sensorHumidade();
 };
 #endif //TP_SENSORHUMIDADE_H

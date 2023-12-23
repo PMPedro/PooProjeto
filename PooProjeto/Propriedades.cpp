@@ -15,3 +15,16 @@ Propriedade::Propriedade(Data temp, Data luz, Data rad, Data vib, Data hum, Data
     this->temperatura.setPropriedades(luz);
     this->som.setPropriedades(som);
 }
+
+void Propriedade::lerSensores(SensorTemperatura temp, sensorLuz luz, sensorRadiacao rad, sensorVibracao vib,
+                              sensorHumidade humidade, sensorFumo, sensorSom som, sensorFumo fumo) {
+    this->temperatura = temp.get_valortemp();
+    this->som = som.getSom();
+    this->humidade = humidade.getHumidade();
+    this->luz = luz.getLuiz();
+    this->radiacao = rad.getRad();
+    this->vibracao = vib.getValorVibracao();
+    this->fumo = fumo.getFumo();
+}
+
+

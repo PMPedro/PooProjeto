@@ -10,8 +10,8 @@ class sensorVibracao : Sensor{
     string unidade;
 public:
     sensorVibracao(int valor = 0) : Sensor(valor), unidade("Hertz") {};
-    void setValor(int valor);
-    int getValor();
+    void setValorVibracao(int valor);
+    Data getValorVibracao();
     ~sensorVibracao();
 };
 #endif //TP_SENSORVIBRACAO_H

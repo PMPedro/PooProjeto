@@ -10,7 +10,7 @@ class sensorSom : Sensor {
     string unidade;
 public:
     sensorSom(int valor = 0) : Sensor(valor), unidade("Decibeis") {};
-    int getSom();
+    Data getSom();
     void setSom(int valor);
     ~sensorSom();
 

@@ -8,6 +8,7 @@
 #include "Aparelhos.h"
 #include "Data.h"
 #include "Sensor.h"
+#include "Sensores/headerSensores.h"
 
 
 
@@ -31,6 +32,9 @@ public:
                  Data vib = Data(), Data hum = Data(), Data fum = Data(),
                  Data som = Data()
                  );
+    void lerSensores(SensorTemperatura temp, sensorLuz luz, sensorRadiacao rad, sensorVibracao vib, sensorHumidade humidade, sensorFumo, sensorSom som, sensorFumo fumo);
+
+
 
 
     //ir buscar valores aos sensores

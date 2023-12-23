@@ -4,11 +4,12 @@
 
 #include "sensorFumo.h"
 
-int sensorFumo::getFumo() {
-   return this->getValor();
+Data sensorFumo::getFumo() {
+    Data fumo(this->getValorSensor(), this->unidade);
+    return fumo;
 }
 
 void sensorFumo::setFumo(int valor) {
-    setValor(valor);
+    setValorSensor(valor);
 }
 

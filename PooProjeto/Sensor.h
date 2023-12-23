@@ -15,8 +15,8 @@ class Sensor {
 public:
     Sensor(int v = 0);
 
-    int getValor();
-    void setValor(int valor);
+    int getValorSensor();
+    void setValorSensor(int valor);
 
 
 

@@ -11,8 +11,8 @@ class sensorRadiacao : Sensor {
 
 public:
     sensorRadiacao(int valor = 0) : Sensor(valor), unidade("Becquerel") {};
-    int getValor();
-    void setValor( int valor );
+    Data getRad();
+    void setRad( int valor );
     ~sensorRadiacao();
 };
 

@@ -4,12 +4,13 @@
 
 #include "sensorVibracao.h"
 
-int sensorVibracao::getValor() {
-   return this->getValor();
+Data sensorVibracao::getValorVibracao() {
+    Data x(this->getValorSensor(), this->unidade);
+    return x;
 }
 
-void sensorVibracao::setValor(int valor) {
-    this->setValor(valor);
+void sensorVibracao::setValorVibracao(int valor) {
+    this->setValorSensor(valor);
 }
 
 sensorVibracao::~sensorVibracao() {
