@@ -20,6 +20,13 @@ cWindow& cWindow::operator<<(const std::string& str){
     return *this;
 }
 
+void cWindow::clear() {
+    ::wclear(window);
+    ::box(window,0,0);
+    ::wrefresh(window);
+
+}
+
 cWindow& cWindow::operator>>(std::string &str) {
     ::noecho();
     ::cbreak();

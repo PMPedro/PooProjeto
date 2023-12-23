@@ -59,7 +59,9 @@ add_executable(PooProjeto main.cpp
         interfaceClassTesting.cpp
         interfaceClassTesting.h
         window.cpp
-        window.h)
+        window.h
+        CicloTratarComandos.cpp
+        CicloTratarComandos.h)
 
 
 #target_link_libraries(${PROJECT_NAME} C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/PooProjeto/PDCurses-3.9/wincon/pdcurses.a)

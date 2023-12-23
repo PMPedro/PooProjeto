@@ -24,6 +24,7 @@ public:
     cWindow& operator<<(const std::string& str);
     cWindow& operator>>(std::string& str);
 
+    void clear();
 };
 
 #endif //POOPROJETO_WINDOW_H
