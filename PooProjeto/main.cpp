@@ -10,5 +10,6 @@ using namespace term;
 
 int main() {
     getchar();
-    interfaceClassTesting a(5, 5, 1, 1);
+    //Valores "altura" e "largura" Irao ser removidos dps, so estao ca para fases de testes
+    interfaceClassTesting a(10, 10, 1, 1);
 }

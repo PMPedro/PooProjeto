@@ -6,7 +6,7 @@
 #define TP_SENSORVIBRACAO_H
 #include "../Sensor.h"
 
-class sensorVibracao : Sensor{
+class sensorVibracao :public Sensor{
     string unidade;
 public:
     sensorVibracao(int valor = 0) : Sensor(valor), unidade("Hertz") {};

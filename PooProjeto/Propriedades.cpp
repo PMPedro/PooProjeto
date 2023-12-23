@@ -3,7 +3,6 @@
 //
 
 #include "Propriedades.h"
-#include "Sensores/headerSensores.h"
 
 
 Propriedade::Propriedade(Data temp, Data luz, Data rad, Data vib, Data hum, Data fum, Data som) {

@@ -6,7 +6,7 @@
 #define TP_SENSORSOM_H
 #include "../Sensor.h"
 
-class sensorSom : Sensor {
+class sensorSom :public Sensor {
     string unidade;
 public:
     sensorSom(int valor = 0) : Sensor(valor), unidade("Decibeis") {};

@@ -4,15 +4,9 @@
 
 #ifndef TP_PROPRIEDADES_H
 #define TP_PROPRIEDADES_H
-#include "Sensor.h"
-#include "Aparelhos.h"
 #include "Data.h"
-#include "Sensor.h"
 #include "Sensores/headerSensores.h"
 
-
-
-class Sensor;
 #define NUMAPARELHOS 7
 //Ir buscar valores aos respetivos sensores
 //fazer include do header dos sensores

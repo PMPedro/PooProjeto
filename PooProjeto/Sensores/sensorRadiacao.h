@@ -6,7 +6,7 @@
 #define TP_SENSORRADIACAO_H
 #include "../Sensor.h"
 
-class sensorRadiacao : Sensor {
+class sensorRadiacao :public Sensor {
     string unidade;
 
 public:
