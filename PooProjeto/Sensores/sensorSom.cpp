@@ -5,11 +5,12 @@
 #include "sensorSom.h"
 
 void sensorSom::setSom(int valor) {
-    setValor(valor);
+    setValorSensor(valor);
 }
 
-int sensorSom::getSom() {
-    return this->getSom();
+Data sensorSom::getSom() {
+    Data x(this->getValorSensor(), this->unidade);
+    return x;
 }
 
 sensorSom::~sensorSom() {

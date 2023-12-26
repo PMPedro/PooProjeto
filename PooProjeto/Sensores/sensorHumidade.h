@@ -6,11 +6,12 @@
 #define TP_SENSORHUMIDADE_H
 #include "../Sensor.h"
 
-class sensorHumidade : Sensor {
+class sensorHumidade :public Sensor {
     string unidade;
 public:
     sensorHumidade(int valor = 0) : Sensor(valor), unidade("%") {};
     void setHumidade(int valor);
-    int getHumidade();
+    Data getHumidade();
+    ~sensorHumidade();
 };
 #endif //TP_SENSORHUMIDADE_H

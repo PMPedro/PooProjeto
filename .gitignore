@@ -1,2 +1,4 @@
 
 *.exe
+PooProjeto/cmake-build-debug/Testing/Temporary/LastTest.log
+*.log

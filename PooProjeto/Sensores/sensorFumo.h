@@ -6,12 +6,14 @@
 #define TP_SENSORFUMO_H
 #include "../Sensor.h"
 
-class sensorFumo : Sensor {
+class sensorFumo : public Sensor {
     string unidade;
 public:
     sensorFumo(int valor = 0) : Sensor(valor) , unidade("Obscuração(%)") {};
     void setFumo(int valor);
-    int getFumo();
+    Data getFumo();
+    ~sensorFumo();
+
 };
 
 #endif //TP_SENSORFUMO_H

@@ -4,12 +4,13 @@
 
 #include "sensorLuz.h"
 
-void sensorLuz::setValor(int valor) {
-    setValor(valor);
+void sensorLuz::setLuz(int valor) {
+    setValorSensor(valor);
 }
 
-int sensorLuz::getValor() {
-    return this->getValor();
+Data sensorLuz::getLuiz() {
+    Data x1(this->getValorSensor(),this->unidade);
+    return x1;
 }
 
 sensorLuz::~sensorLuz() {

@@ -18,8 +18,11 @@ class Zona {
     int id;
 
 public:
-
     Zona(int id, Propriedade prop = Propriedade(), Sensor so = Sensor(), Aparelho apa = Aparelho(), Processador proc = Processador() );
+
+//fazer add Processador, aparelhos e addSensores
+
+
 };
 
 

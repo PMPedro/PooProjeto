@@ -5,10 +5,11 @@
 #include "sensorHumidade.h"
 
 void sensorHumidade::setHumidade(int valor) {
-    this->setValor(valor);
+    this->setValorSensor(valor);
 }
 
-int sensorHumidade::getHumidade() {
-    return this->getValor();
+Data sensorHumidade::getHumidade() {
+    Data x(this->getValorSensor(), this->unidade);
+    return x;
 }
 

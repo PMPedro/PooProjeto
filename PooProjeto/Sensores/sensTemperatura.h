@@ -13,8 +13,8 @@ class SensorTemperatura : public Sensor {
 
 public:
     SensorTemperatura(int valor = 0) : Sensor(valor), unidade("Celcius"){};
-    int get_valor();
-    int set_valor(int valor);
+    Data get_valortemp();
+    void set_valortemp(int valor);
     ~SensorTemperatura();
 
 };

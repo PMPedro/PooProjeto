@@ -9,11 +9,11 @@ Sensor::Sensor(int valor) {
     this->valor = valor;
 }
 
-int Sensor::getValor() {
-    return this->getValor();
+int Sensor::getValorSensor() {
+    return this->valor;
 }
 
-void Sensor::setValor(int valor) {
+void Sensor::setValorSensor(int valor) {
     this->valor = valor;
 }
 

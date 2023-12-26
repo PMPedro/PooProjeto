@@ -5,12 +5,13 @@
 #include "sensTemperatura.h"
 
 
-int SensorTemperatura::set_valor(int valor) {
-    return set_valor(valor);
+void SensorTemperatura::set_valortemp(int valor) {
+    setValorSensor(valor);
 }
 
-int SensorTemperatura::get_valor() {
-    return this->get_valor();
+Data SensorTemperatura::get_valortemp() {
+    Data x(this->getValorSensor(), this->unidade);
+    return x;
 }
 
 SensorTemperatura::~SensorTemperatura() {

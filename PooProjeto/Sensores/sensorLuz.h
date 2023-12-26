@@ -14,8 +14,8 @@ class sensorLuz:public Sensor {
 public:
 
     sensorLuz(int valor = 0): Sensor(valor), unidade("Lumens") {};
-    void setValor(int valor);
-    int getValor();
+    void setLuz(int valor);
+    Data getLuiz();
     ~sensorLuz();
 
 };

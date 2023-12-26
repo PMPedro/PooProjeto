@@ -6,13 +6,13 @@
 #define TP_SENSORRADIACAO_H
 #include "../Sensor.h"
 
-class sensorRadiacao : Sensor {
+class sensorRadiacao :public Sensor {
     string unidade;
 
 public:
     sensorRadiacao(int valor = 0) : Sensor(valor), unidade("Becquerel") {};
-    int getValor();
-    void setValor( int valor );
+    Data getRad();
+    void setRad( int valor );
     ~sensorRadiacao();
 };
 

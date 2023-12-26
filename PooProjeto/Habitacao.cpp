@@ -5,29 +5,19 @@
 #include "Habitacao.h"
  Habitacao::Habitacao(int dimensaoX, int dimensaoY, const vector <Zona> &zonas) {
 
-    if(veriTamanho(dimensaoX, dimensaoY)){
+    veriTamanho(&dimensaoX);
+     veriTamanho(&dimensaoY);
     this->dimensaoX = dimensaoX;
     this->dimensaoY = dimensaoY;
-    }else{
-        this->dimensaoX = 0;
-        this->dimensaoY = 0;
-        cerr << "\nDimensoes invalidas, postas a 0";
-
-    }
-    if(!zonas.empty()){
+    if(!zonas.empty())
         this->zonas = zonas;
-    }
 }
 
-bool Habitacao::veriTamanho(int x, int y) {
-    bool ret = true;
-
-    if( ( x < 2 ) || ( x > 4))  ret = false;
-    if( ( y < 2 ) || ( y > 4))  ret = false;
-
-    return ret;
+void Habitacao::veriTamanho(int *x) {
+    if( (*x < 2) || (*x > 4) )
+        *x = 2;
+    //caso dimensao n esteja entre 2 e 4 e posta a um valor default, 2
 }
-
 
 void Habitacao::setDimensaoX(int x) {
     if( ( x >= 2 ) && ( x <= 4))
@@ -40,9 +30,10 @@ void Habitacao::setDimensaoY(int y) {
 }
 
 void Habitacao::addZonas(Zona zona) {
-    int conta; //fazer dps 
+        if(checkZonasQuant()){
+            this->zonas.push_back(zona);
+        }
 }
-
 
 int Habitacao::getDimX() {
     return this->dimensaoX;
@@ -50,4 +41,10 @@ int Habitacao::getDimX() {
 
 int Habitacao::getDimY() {
     return this->dimensaoY;
+}
+
+bool Habitacao::checkZonasQuant() {
+    int conta = this->dimensaoY * this->dimensaoX;
+    int zonasSize = this->zonas.size();
+    return !(zonasSize >= conta);
 }
