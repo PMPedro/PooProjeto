@@ -15,15 +15,17 @@ class Habitacao {
     int dimensaoX, dimensaoY;
 
 public:
+    int id = 0;
     Habitacao(int dimensaoX = 0, int dimensaoY = 0, const vector<Zona>& zonas = vector<Zona>());
 
     void veriTamanho(int *x);
     void setDimensaoX(int x);
     void setDimensaoY(int y);
-    void addZonas (Zona zona);
+    void addZonas (int x, int y, string letra);
     int getDimX();
     int getDimY();
     bool checkZonasQuant();
+    vector <Zona> getZonas();
 
 
 

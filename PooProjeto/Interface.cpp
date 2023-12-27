@@ -5,8 +5,9 @@
 #include "Interface.h"
 #include <sstream>
 #include <fstream>
+#include "comandosOutput.h"
 
-std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro){
+std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro , int *instante, cWindow *habitacao, cWindow *listComandos, Habitacao *casa, vector <cWindow> *cZonas){
     std::ifstream ifich(nFicheiro);
     std::string linha;
     std::vector<std::string> resultado;
@@ -20,7 +21,7 @@ std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro){
     while(getline(ifich,linha)){
 
         trataLinha.clear();
-        trataLinha = trataComando(linha);
+        trataLinha = trataComando(linha, instante, habitacao, listComandos, casa, cZonas);
 
 
         if (trataLinha[0] == "true"){
@@ -33,7 +34,7 @@ std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro){
     return resultado;
 }
 //Funções para verificar a sintaxe dos comandos com mais do que a keyword
-bool Interface::veriAvanca(const std::string& comando) {
+bool Interface::veriAvanca(const std::string& comando, int *instante) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -43,6 +44,7 @@ bool Interface::veriAvanca(const std::string& comando) {
     if (!(iss >> keyword >> n) || iss.get() != EOF)  {
         return false;
     }
+    (*instante) += n;
 /*
     if(iss >> std::ws){
         return false;
@@ -50,7 +52,7 @@ bool Interface::veriAvanca(const std::string& comando) {
     return true;
 }
 
-bool Interface::veriHnova(const std::string& comando) {
+bool Interface::veriHnova(const std::string& comando, cWindow *habi, Habitacao *casa) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -60,11 +62,16 @@ bool Interface::veriHnova(const std::string& comando) {
     if (!(iss >> keyword >> nLinhas >> nColunas) || iss.get() != EOF)  {
         return false;
     }
-
+    if( ( (nLinhas >= 2) && (nLinhas <= 4) || (nColunas >= 2) && (nColunas <= 4)) ){
+    habi->clear();
+    casa->setDimensaoX(nLinhas);
+    casa->setDimensaoY(nColunas);
+    habi->setWindow(casa->getDimX() * 2, casa->getDimY() * 4, 1 , 1 , "Habitacao");
+    }
     return true;
 }
 
-bool Interface::veriZnova(const std::string& comando) {
+bool Interface::veriZnova(const std::string& comando, Habitacao *casa, vector <cWindow> *cZonas) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -75,10 +82,26 @@ bool Interface::veriZnova(const std::string& comando) {
         return false;
     }
 
+    casa->addZonas(linha, coluna, "C");
+    if(!(cZonas->empty())){
+        int aux = (*cZonas).size();
+
+        (*cZonas)[aux+1].setWindow(2,2 , linha, coluna, "C");
+    }else{
+        cWindow newWindow(2, 2, linha, coluna);  // Create a new cWindow object with appropriate parameters
+        newWindow.setWindow(2, 2, linha, coluna, "C");
+        cZonas->push_back(newWindow);  // Add the newWindow to the vector
+    }
+
+
+
+
+   /* int aux = cZonas->size();*/
+
     return true;
 }
 
-bool Interface::veriZrem(const std::string& comando) {
+bool Interface::veriZrem(const std::string& comando, Habitacao *casa, vector <cWindow> *cZonas) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -87,6 +110,28 @@ bool Interface::veriZrem(const std::string& comando) {
     //se a extração falhar ou se existirem mais cenas depois do n
     if (!(iss >> keyword >> idZona) || iss.get() != EOF)  {
         return false;
+    }
+
+    vector<Zona> aux;
+    aux = (*casa).getZonas();
+    int w, h;
+    if(!(aux.empty())){
+    for(int j = 0; j < aux.size(); j++){
+
+        if(aux[j].getId() == idZona ){
+            w = aux[j].getposx();
+            h = aux[j].getposy();
+            (*cZonas)[j].totalClear();
+        }
+
+    }
+    }
+
+    if(!((*cZonas).empty())){
+        for(int i; i < (*cZonas).size();i++){
+       if(((*cZonas)[i].getW() == w) && ((*cZonas)[i].getH() == h))
+           (*cZonas)[i].totalClear();
+        }
     }
 
     return true;
@@ -354,14 +399,17 @@ std::string Interface::limpaComando(const std::string&comando){
     }
 }
 
-std::vector<std::string> Interface::trataComando(const std::string&comando){
+std::vector<std::string> Interface::trataComando(const std::string&comando, int *instante, cWindow *habitacao, cWindow *listComandos, Habitacao *casa, vector <cWindow> *cZonas){
     std::string limpo = limpaComando(comando);
+    comandosOutput controlerComandos;
     //std::cout << "Comando limpo: "<< limpo<< std::endl;
     if(comando == "prox"){
         //executa prox
+        controlerComandos.prox(instante);
         return {"true"};
     }else if(comando == "hrem"){
         //executa hrem
+        controlerComandos.hrem(habitacao, casa);
         return {"true"};
     }else if(comando == "zlista"){
         //executa zlista
@@ -370,28 +418,29 @@ std::vector<std::string> Interface::trataComando(const std::string&comando){
         //executa plista
         return {"true"};
     }else if(limpo == "avanca"){
-        if(veriAvanca(comando)){
+        if(veriAvanca(comando, instante)){
             //execAvanca();
             return {"true"};
         }else{
             return {"false"};
         }
     }else if(limpo == "hnova"){
-        if(veriHnova(comando)){
+        if(veriHnova(comando, habitacao, casa)){
             //execHnova(comando);
             return {"true"};
         }else{
             return {"false"};
         }
     }else if(limpo == "znova"){
-        if(veriZnova(comando)){
-            //execAvanca();
+        if(veriZnova(comando, casa, cZonas)){
+
+            //execAvanca();veriZnova
             return {"true"};
         }else{
             return {"false"};
         }
     }else if(limpo == "zrem"){
-        if(veriZrem(comando)){
+        if(veriZrem(comando, casa, cZonas)){
             //execAvanca();
             return {"true"};
         }else{
@@ -507,7 +556,7 @@ std::vector<std::string> Interface::trataComando(const std::string&comando){
         if(result == "Syntax Error"){
             return {"false"};
         }else{
-            std::vector<std::string> resVector = leFicheiro(result);
+            std::vector<std::string> resVector = leFicheiro(result, instante, habitacao, listComandos, casa, cZonas);
 
             if (resVector[0] == "OP_ERROR"){//n conseguiu abrir
                 return {"false"};
