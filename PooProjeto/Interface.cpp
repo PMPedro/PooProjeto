@@ -6,7 +6,7 @@
 #include <sstream>
 #include <fstream>
 
-std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro){
+std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro , int *instante){
     std::ifstream ifich(nFicheiro);
     std::string linha;
     std::vector<std::string> resultado;
@@ -20,7 +20,7 @@ std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro){
     while(getline(ifich,linha)){
 
         trataLinha.clear();
-        trataLinha = trataComando(linha);
+        trataLinha = trataComando(linha, instante);
 
 
         if (trataLinha[0] == "true"){
@@ -33,7 +33,7 @@ std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro){
     return resultado;
 }
 //Funções para verificar a sintaxe dos comandos com mais do que a keyword
-bool Interface::veriAvanca(const std::string& comando) {
+bool Interface::veriAvanca(const std::string& comando, int *instante) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -43,6 +43,7 @@ bool Interface::veriAvanca(const std::string& comando) {
     if (!(iss >> keyword >> n) || iss.get() != EOF)  {
         return false;
     }
+    (*instante) += n;
 /*
     if(iss >> std::ws){
         return false;
@@ -354,7 +355,7 @@ std::string Interface::limpaComando(const std::string&comando){
     }
 }
 
-std::vector<std::string> Interface::trataComando(const std::string&comando){
+std::vector<std::string> Interface::trataComando(const std::string&comando, int *instante){
     std::string limpo = limpaComando(comando);
     //std::cout << "Comando limpo: "<< limpo<< std::endl;
     if(comando == "prox"){
@@ -370,7 +371,7 @@ std::vector<std::string> Interface::trataComando(const std::string&comando){
         //executa plista
         return {"true"};
     }else if(limpo == "avanca"){
-        if(veriAvanca(comando)){
+        if(veriAvanca(comando, instante)){
             //execAvanca();
             return {"true"};
         }else{
@@ -507,7 +508,7 @@ std::vector<std::string> Interface::trataComando(const std::string&comando){
         if(result == "Syntax Error"){
             return {"false"};
         }else{
-            std::vector<std::string> resVector = leFicheiro(result);
+            std::vector<std::string> resVector = leFicheiro(result, instante);
 
             if (resVector[0] == "OP_ERROR"){//n conseguiu abrir
                 return {"false"};

@@ -10,11 +10,11 @@
 
 class Interface {
 public:
-    std::vector<std::string> trataComando(const std::string&comando);
+    std::vector<std::string> trataComando(const std::string&comando, int *instante);
 private:
-    std::vector<std::string> leFicheiro(const std::string& nFicheiro);
+    std::vector<std::string> leFicheiro(const std::string& nFicheiro, int *instante);
     std::string limpaComando(const std::string&comando);
-    bool veriAvanca(const std::string&comando);
+    bool veriAvanca(const std::string&comando, int *instante);
     bool veriHnova(const std::string&comando);
     bool veriZnova(const std::string&comando);
     bool veriZrem(const std::string&comando);

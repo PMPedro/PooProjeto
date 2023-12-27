@@ -32,19 +32,22 @@ public:
         listComandos.setWindow(t.getNumRows() / 2,20,2,t.getNumCols() - 20, "list");
         trataComandos dealWithComando;
 
+        Habitacao habitacao(1,2);
+        int instante = 0;
 
         string comando;
         int indi = 0;
         while(comando != "exit"){
             getComandos << "<>" >> comando;
-
             getComandos.clear();
-
             if(indi == 4){
                 listComandos.clear();
                 indi = 0;
             }
-            dealWithComando.comando(comando, &listComandos, &habi);
+
+
+            dealWithComando.comando(comando, &listComandos, &habi, &instante);
+            listComandos << instante;
             indi++;
         }
     };

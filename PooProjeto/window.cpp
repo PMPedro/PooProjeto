@@ -20,6 +20,15 @@ cWindow& cWindow::operator<<(const std::string& str){
     return *this;
 }
 
+cWindow& cWindow::operator<<(const int& valor){
+    ::wprintw(window, "\n  %d", valor);
+    ::wrefresh(window);
+    ::box(window,0,0);
+    ::wrefresh(window);
+    return *this;
+}
+
+
 void cWindow::clear() {
     ::wclear(window);
     ::box(window,0,0);

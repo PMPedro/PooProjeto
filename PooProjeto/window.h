@@ -23,6 +23,8 @@ public:
 
     cWindow& operator<<(const std::string& str);
     cWindow& operator>>(std::string& str);
+    cWindow& operator<<(const int& valor);
+
 
     void clear();
 };
