@@ -29,9 +29,10 @@ void Habitacao::setDimensaoY(int y) {
         this->dimensaoY = y;
 }
 
-void Habitacao::addZonas(Zona zona) {
+void Habitacao::addZonas(int x, int y, string letra) {
+       Zona aux(id++,letra, x, y);
         if(checkZonasQuant()){
-            this->zonas.push_back(zona);
+            this->zonas.push_back(aux);
         }
 }
 
@@ -47,4 +48,8 @@ bool Habitacao::checkZonasQuant() {
     int conta = this->dimensaoY * this->dimensaoX;
     int zonasSize = this->zonas.size();
     return !(zonasSize >= conta);
+}
+
+vector<Zona> Habitacao::getZonas() {
+    return this->zonas;
 }

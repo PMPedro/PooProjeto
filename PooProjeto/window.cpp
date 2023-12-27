@@ -10,6 +10,8 @@ cWindow::cWindow(int altura, int largura, int w, int h) {
     window = newwin(altura,largura,w,h);
     box(window, 0, 0);
     wrefresh(window);
+    this->posX = w;
+    this->posY = h;
 }
 
 cWindow& cWindow::operator<<(const std::string& str){
@@ -34,6 +36,11 @@ void cWindow::clear() {
     ::box(window,0,0);
     ::wrefresh(window);
 
+}
+
+void cWindow::totalClear() {
+    ::wclear(window);
+    ::wrefresh(window);
 }
 
 cWindow& cWindow::operator>>(std::string &str) {
@@ -95,4 +102,12 @@ void cWindow::setWindow(int altura, int largura, int w, int h, std::string text)
     window = newwin(altura,largura,w,h);
     box(window, 0, 0);
     wrefresh(window);
+    this->posX = w;
+    this->posY = h;
 }
+
+int cWindow::getW() {
+    return this->posX;
+}
+
+int cWindow::getH() {   return this->posY;  }
