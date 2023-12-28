@@ -35,7 +35,10 @@ void comandosOutput::zLista(cWindow *comando, Habitacao *casa) {
         *comando << "\n" << "Ainda nao existem Zonas!";
     }else{
         for(int i = 0; i < aux.size(); i++){
-            *comando << aux[i].getId() << aux[i].getposy() << aux[i].getposx();
+            (*comando).clear();
+            *comando << "Zona Id-> " << aux[i].getId() << "\nNumero de Sensores-> " << aux[i].getNumSensoeres() << "\nNumero de Aparelhos-> "<<aux[i].getNumAparelhos()
+            << "\nNumero de Processadores-> " << aux[i].getNumProcessadores() << "Pos x | Pos y-> " << aux[i].getposx() << " | " << aux[i].getposy();
+            getchar();
         }
     }
 

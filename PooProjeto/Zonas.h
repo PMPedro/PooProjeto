@@ -11,6 +11,7 @@
 #include "Aparelhos/headerAparelhos.h"
 
 class Zona {
+ //   unique_ptr<int> example2;
     Propriedade propriedades;
     vector <Sensor> sensores;
     vector <Aparelho> aparelhos;
@@ -19,6 +20,9 @@ class Zona {
     int id;
      int nexid = 1;
     string letra;
+    //unique_ptr<vector<Aparelho>> example;
+
+
 
 public:
     Zona( int id, string letra = "N", int posx = 0, int posy = 0 , Propriedade propr = Propriedade());
@@ -43,7 +47,7 @@ public:
     void eraseSensor(int id);
     void eraseAparelho(int id);
 
-    
+
 
 
 //fazer add Processador, aparelhos e addSensores
