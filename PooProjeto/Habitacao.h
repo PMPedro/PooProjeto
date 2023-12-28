@@ -5,7 +5,7 @@
 #ifndef TP_HABITACAO_H
 #define TP_HABITACAO_H
 #include "Zonas.h"
-#include "vector"
+
 //Ao apagar uma zona, por exemplo, tudo o q esta dentro dessa zona tb e apagado, usar smart pointer ai, para n ter erros no futuro ao apagar zonas
 //verificar dimenso X e y para n ultrapassarem os valores defenidos
 

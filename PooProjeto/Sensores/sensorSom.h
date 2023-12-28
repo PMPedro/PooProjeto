@@ -9,7 +9,7 @@
 class sensorSom :public Sensor {
     string unidade;
 public:
-    sensorSom(int valor = 0) : Sensor(valor), unidade("Decibeis") {};
+    sensorSom(int valor = 0) : Sensor(valor, "Som"), unidade("Decibeis") {};
     Data getSom();
     void setSom(int valor);
     ~sensorSom();

@@ -63,7 +63,16 @@ add_executable(PooProjeto main.cpp
         CicloTratarComandos.cpp
         CicloTratarComandos.h
         comandosOutput.cpp
-        comandosOutput.h)
+        comandosOutput.h
+        Aparelhos/Aspersor.cpp
+        Aparelhos/Aspersor.h
+        Aparelhos/Aquecedor.cpp
+        Aparelhos/Aquecedor.h
+        Aparelhos/Refrigerador.cpp
+        Aparelhos/Refrigerador.h
+        Aparelhos/Lampada.cpp
+        Aparelhos/Lampada.h
+        Aparelhos/headerAparelhos.h)
 
 
 #target_link_libraries(${PROJECT_NAME} C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/PooProjeto/PDCurses-3.9/wincon/pdcurses.a)

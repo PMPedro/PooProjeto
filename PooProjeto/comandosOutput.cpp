@@ -28,4 +28,17 @@ void comandosOutput::hrem(cWindow *habi, Habitacao *casa) {
    //  delete casa;
 }
 
+void comandosOutput::zLista(cWindow *comando, Habitacao *casa) {
+    vector <Zona> aux;
+    aux = (*casa).getZonas();
+    if(aux.empty()){
+        *comando << "\n" << "Ainda nao existem Zonas!";
+    }else{
+        for(int i = 0; i < aux.size(); i++){
+            *comando << aux[i].getId() << aux[i].getposy() << aux[i].getposx();
+        }
+    }
+
+}
+
 

@@ -17,6 +17,7 @@ public:
     void prox(int *instante);
     void hNova(cWindow *habi, Habitacao *casa, int x, int y);
     void hrem (cWindow *habi, Habitacao *casa);
+    void zLista(cWindow *comando, Habitacao *casa);
 };
 
 #endif //POOPROJETO_COMANDOSOUTPUT_H

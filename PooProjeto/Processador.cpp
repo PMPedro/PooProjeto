@@ -4,6 +4,14 @@
 
 #include "Processador.h"
 
-Processador::Processador(const vector <Regras> &regras) {
-    this->regras = regras;
+Processador::Processador() {
+    this->id = nextid++;
+}
+
+int Processador::getId() {
+    return this->id;
+}
+
+void Processador::addRegra(Regras r) {
+    this->regras.push_back((r));
 }

@@ -9,7 +9,7 @@
 class sensorFumo : public Sensor {
     string unidade;
 public:
-    sensorFumo(int valor = 0) : Sensor(valor) , unidade("Obscuração(%)") {};
+    sensorFumo(int valor = 0) : Sensor(valor, "Fumo") , unidade("Obscuração(%)") {};
     void setFumo(int valor);
     Data getFumo();
     ~sensorFumo();

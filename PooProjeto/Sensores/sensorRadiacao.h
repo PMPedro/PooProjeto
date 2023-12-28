@@ -10,7 +10,7 @@ class sensorRadiacao :public Sensor {
     string unidade;
 
 public:
-    sensorRadiacao(int valor = 0) : Sensor(valor), unidade("Becquerel") {};
+    sensorRadiacao(int valor = 0) : Sensor(valor,"Radiacao"), unidade("Becquerel") {};
     Data getRad();
     void setRad( int valor );
     ~sensorRadiacao();

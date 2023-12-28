@@ -5,8 +5,11 @@
 #include "Sensor.h"
 
 
-Sensor::Sensor(int valor) {
+Sensor::Sensor(int valor, string n) {
     this->valor = valor;
+    this->nome = n;
+    this->id = nextid++;
+
 }
 
 int Sensor::getValorSensor() {
@@ -15,5 +18,9 @@ int Sensor::getValorSensor() {
 
 void Sensor::setValorSensor(int valor) {
     this->valor = valor;
+}
+
+int Sensor::getId() {
+    return this->id;
 }
 

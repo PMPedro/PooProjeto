@@ -9,7 +9,7 @@
 class sensorVibracao :public Sensor{
     string unidade;
 public:
-    sensorVibracao(int valor = 0) : Sensor(valor), unidade("Hertz") {};
+    sensorVibracao(int valor = 0) : Sensor(valor,"Vibracao"), unidade("Hertz") {};
     void setValorVibracao(int valor);
     Data getValorVibracao();
     ~sensorVibracao();
