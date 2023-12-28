@@ -25,6 +25,7 @@ int main() {
  *  znova (falta acionar id ao criar zona)
  *  zrem
  *  zlista
+ *  zcomp
  *
  * */
 
@@ -42,5 +43,5 @@ int main() {
  *  Meter ponteiros inteligentes nas classes
  *  Tratar dos ids (fazerlos acrescemtar sozinhos)
  *  Acabar os comandos
- *  Tratar dos Destructors (la no fundo tb e os ponteiros inteligentes) 
+ *  Tratar dos Destructors (la no fundo tb e os ponteiros inteligentes)
  * */

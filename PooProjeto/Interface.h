@@ -19,7 +19,7 @@ private:
     bool veriHnova(const std::string&comando, cWindow *habi, Habitacao *casa);
     bool veriZnova(const std::string& comando, Habitacao *casa, vector <cWindow> *cZonas);
     bool veriZrem(const std::string& comando, Habitacao *casa, vector <cWindow> *cZonas);
-    bool veriZcomp(const std::string&comando);
+    bool veriZcomp(const std::string& comando, Habitacao *casa, cWindow *listComando);
     bool veriZprops(const std::string&comando);
     bool veriPmod(const std::string&comando);
     bool veriCnovo(const std::string&comando);
