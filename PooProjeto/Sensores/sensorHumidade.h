@@ -9,7 +9,7 @@
 class sensorHumidade :public Sensor {
     string unidade;
 public:
-    sensorHumidade(int valor = 0) : Sensor(valor), unidade("%") {};
+    sensorHumidade(int valor = 0) : Sensor(valor, "Humidade"), unidade("%") {};
     void setHumidade(int valor);
     Data getHumidade();
     ~sensorHumidade();

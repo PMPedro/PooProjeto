@@ -13,7 +13,7 @@ class sensorLuz:public Sensor {
     string unidade;
 public:
 
-    sensorLuz(int valor = 0): Sensor(valor), unidade("Lumens") {};
+    sensorLuz(int valor = 0): Sensor(valor, "Luz"), unidade("Lumens") {};
     void setLuz(int valor);
     Data getLuiz();
     ~sensorLuz();

@@ -10,29 +10,19 @@
 //Filhos tb tem a unidade 
 class Sensor {
     int valor;
+    string nome;
+   int nextid = 1;
+    int id;
 
 public:
-    Sensor(int v = 0);
+    Sensor(int v = 0, string n = " ");
 
     int getValorSensor();
     void setValorSensor(int valor);
+    int getId();
 
-
-
-
-    //NAo reage a passagem do tempo
-    /*
-     *  Sensor Letra (p/ visualização) Propriedade observada
-        temperatura t Temperatura
-        movimento v Vibração
-        luminosidade m Luz
-        radiação d Radiação
-        humidade h Humidade
-        som o Som
-        fumo f Fumo
-     *
-     */
 };
 
+//int Sensor::nextid = 1;
 
 #endif //TP_SENSORES_H

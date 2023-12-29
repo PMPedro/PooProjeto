@@ -413,6 +413,7 @@ std::vector<std::string> Interface::trataComando(const std::string&comando, int 
         return {"true"};
     }else if(comando == "zlista"){
         //executa zlista
+        controlerComandos.zLista(listComandos, casa);
         return {"true"};
     }else if(comando == "plista"){
         //executa plista
