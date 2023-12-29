@@ -82,7 +82,17 @@ bool Interface::veriZnova(const std::string& comando, Habitacao *casa, vector <c
         return false;
     }
 
-    casa->addZonas(linha, coluna, "C");
+//    casa->addZonas(linha, coluna, "C");
+//verifica se existe uma casa
+if(!(casa == nullptr)){
+Zona h(rand() % 1 + 1000, "", linha, coluna); //cria uma zona auxiliar
+    Propriedade aux; //cria as propriedades para essa zona
+    aux.inilerSensores(); //inicializa as propriedades com valores random
+    h.setPropriedades(aux); //adiciona as propriedades a zona aux criada
+    (*casa).addZonas(h); //adiciona a zona á habitacao
+
+    //aqui falta fazer um if para verificar as dimensoes dacasa, para meter a zona dentro da casa (para ficasr ,mais bonito)
+
     if(!(cZonas->empty())){
         int aux = (*cZonas).size();
 
@@ -92,6 +102,7 @@ bool Interface::veriZnova(const std::string& comando, Habitacao *casa, vector <c
         newWindow.setWindow(2, 2, linha, coluna, "C");
         cZonas->push_back(newWindow);  // Add the newWindow to the vector
     }
+}
 
 
 
@@ -137,7 +148,7 @@ bool Interface::veriZrem(const std::string& comando, Habitacao *casa, vector <cW
     return true;
 }
 
-bool Interface::veriZcomp(const std::string& comando) {
+bool Interface::veriZcomp(const std::string& comando, Habitacao *casa, cWindow *listComando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -147,11 +158,42 @@ bool Interface::veriZcomp(const std::string& comando) {
     if (!(iss >> keyword >> idZona) || iss.get() != EOF)  {
         return false;
     }
+    vector <Sensor> s1;
+    vector <Aparelho> a1;
+    vector <Processador> p1;
+    vector <Zona> aux;
 
+aux = (*casa).getZonas();
+bool found = false;
+if(!(aux.empty())){
+    for(int i = 0; i < aux.size(); i++){
+        s1 = aux[i].getSensor();
+        found = true;
+        if(aux[i].getId() == idZona){
+        if((s1.empty()))
+            (*listComando) << "Nao existem Sensores na zona " << i;
+        a1 = aux[i].getAparelho();
+        if((a1.empty()))
+            (*listComando) << "Nao existem Aparelhos na zona " << i;
+        p1 = aux[i].getProcessador();
+        if((p1.empty()))
+            (*listComando) << "Nao existem Processadores na zona " << i;
+
+        if(!(s1.empty()))
+            (*listComando) << s1[i].getId();
+        if(!(a1.empty()))
+            (*listComando) << a1[i].getId();
+        if(!(p1.empty()))
+            (*listComando) << p1[i].getId();
+        }
+    }
+}
+if(found == false)
+    (*listComando) <<"Zona com id " << idZona << "Nao encontrado";
     return true;
 }
 
-bool Interface::veriZprops(const std::string& comando) {
+bool Interface::veriZprops(const std::string& comando, Habitacao *casa ,cWindow *listComandos) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -161,11 +203,30 @@ bool Interface::veriZprops(const std::string& comando) {
     if (!(iss >> keyword >> idZona) || iss.get() != EOF)  {
         return false;
     }
+    vector <Zona> aux;
+    aux = (*casa).getZonas();
+    Propriedade auxP;
 
+
+    int found = false;
+    if(!(aux.empty())){
+        for(int i = 0; i < aux.size(); i++){
+            if(aux[i].getId() == idZona){
+                found = true;
+                auxP = aux[i].getPropriedades();
+                (*listComandos) << "Temperatura " << auxP.getTemp() << "\nLuz "  << auxP.getLuz() << "\nSom" << auxP.getSom() << "\nHumidade " << auxP.getHumidade() << "\nRadiacao " << auxP.getRad() <<"\nFumo " <<auxP.getFumo();
+                break;
+            }
+        }
+    }
+
+    if(!found){
+        (*listComandos) << "Zona com id " << idZona << " nao encontrada!";
+    }
     return true;
 }
 
-bool Interface::veriPmod(const std::string& comando) {
+bool Interface::veriPmod(const std::string& comando, Habitacao *casa, cWindow *listComando) {
     std::istringstream iss(comando);
 
     std::string keyword;
@@ -176,6 +237,23 @@ bool Interface::veriPmod(const std::string& comando) {
     if (!(iss >> keyword >> idZona >> nome >> valor) || iss.get() != EOF)  {
         return false;
     }
+
+    vector <Zona> aux;
+    aux = (*casa).getZonas();
+    Propriedade auxP;
+    bool found;
+
+    if(!(aux.empty())){
+        for(int i = 0; i < aux.size(); i++){
+            if(aux[i].getId() == idZona){
+                found = true;
+                auxP = aux[i].getPropriedades();
+            }
+        }
+    }
+
+
+
 
     return true;
 }
@@ -448,14 +526,16 @@ std::vector<std::string> Interface::trataComando(const std::string&comando, int 
             return {"false"};
         }
     }else if(limpo == "zcomp"){
-        if(veriZcomp(comando)){
+        if(veriZcomp(comando, casa, listComandos )){
+
             //execAvanca();
             return {"true"};
         }else{
             return {"false"};
         }
     }else if(limpo == "zprops"){
-        if(veriZprops(comando)){
+        if(veriZprops(comando, casa, listComandos)){
+
             //execAvanca();
             return {"true"};
         }else{

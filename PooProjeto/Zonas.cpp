@@ -90,3 +90,23 @@ void Zona::eraseAparelho(int id) {
         }
     }
 }
+
+vector<Sensor> Zona::getSensor() {
+    return this->sensores;
+}
+
+vector<Aparelho> Zona::getAparelho() {
+    return this->aparelhos;
+}
+
+vector<Processador> Zona::getProcessador() {
+    return this->processador;
+}
+
+Propriedade Zona::getPropriedades() {
+    return this->propriedades;
+}
+
+void Zona::setPropriedades(Propriedade P) {
+    this->propriedades = P;
+}

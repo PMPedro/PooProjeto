@@ -8,11 +8,15 @@
 
 using namespace term;
 
+
+
 int main() {
     getchar();
     //Valores "altura" e "largura" Irao ser removidos dps, so estao ca para fases de testes
     interfaceClassTesting a(10, 10, 1, 1);
 }
+
+
 
 /*
  *      os que tem (*) no fianl e pq falta meter mais bonito, ou tratar certos detalhes
@@ -25,8 +29,16 @@ int main() {
  *  znova (falta acionar id ao criar zona)
  *  zrem
  *  zlista
+ *  zcomp
+ *  zprops
  *
  * */
+
+/*Deixado a meio
+ *  pmod
+ *
+ * */
+
 
 /**
  * N percebi bem o q e para fzr
@@ -42,5 +54,5 @@ int main() {
  *  Meter ponteiros inteligentes nas classes
  *  Tratar dos ids (fazerlos acrescemtar sozinhos)
  *  Acabar os comandos
- *  Tratar dos Destructors (la no fundo tb e os ponteiros inteligentes) 
+ *  Tratar dos Destructors (la no fundo tb e os ponteiros inteligentes)
  * */

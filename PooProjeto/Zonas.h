@@ -47,6 +47,12 @@ public:
     void eraseSensor(int id);
     void eraseAparelho(int id);
 
+    vector <Sensor> getSensor();
+    vector <Aparelho> getAparelho();
+    vector <Processador> getProcessador();
+    Propriedade getPropriedades();
+    void setPropriedades(Propriedade P);
+
 
 
 
