@@ -12,7 +12,7 @@ public:
     sensorFumo(int valor = 0) : Sensor(valor, "Fumo") , unidade("Obscuração(%)") {};
     void setFumo(int valor);
     Data getFumo();
-    ~sensorFumo();
+
 
 };
 

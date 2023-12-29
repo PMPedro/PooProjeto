@@ -12,6 +12,6 @@ public:
     sensorHumidade(int valor = 0) : Sensor(valor, "Humidade"), unidade("%") {};
     void setHumidade(int valor);
     Data getHumidade();
-    ~sensorHumidade();
+
 };
 #endif //TP_SENSORHUMIDADE_H

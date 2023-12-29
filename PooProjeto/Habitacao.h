@@ -22,6 +22,7 @@ public:
     void setDimensaoX(int x);
     void setDimensaoY(int y);
     void addZonas (int x, int y, string letra);
+    void addZonas (Zona zona);
     int getDimX();
     int getDimY();
     bool checkZonasQuant();

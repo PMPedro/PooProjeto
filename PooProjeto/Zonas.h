@@ -50,6 +50,8 @@ public:
     vector <Sensor> getSensor();
     vector <Aparelho> getAparelho();
     vector <Processador> getProcessador();
+    Propriedade getPropriedades();
+    void setPropriedades(Propriedade P);
 
 
 

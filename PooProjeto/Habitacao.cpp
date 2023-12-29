@@ -53,3 +53,7 @@ bool Habitacao::checkZonasQuant() {
 vector<Zona> Habitacao::getZonas() {
     return this->zonas;
 }
+
+void Habitacao::addZonas(Zona zona) {
+    this->zonas.push_back(zona);
+}

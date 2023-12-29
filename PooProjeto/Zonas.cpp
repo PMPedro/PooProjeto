@@ -102,3 +102,11 @@ vector<Aparelho> Zona::getAparelho() {
 vector<Processador> Zona::getProcessador() {
     return this->processador;
 }
+
+Propriedade Zona::getPropriedades() {
+    return this->propriedades;
+}
+
+void Zona::setPropriedades(Propriedade P) {
+    this->propriedades = P;
+}

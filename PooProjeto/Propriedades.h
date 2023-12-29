@@ -6,6 +6,7 @@
 #define TP_PROPRIEDADES_H
 #include "Data.h"
 #include "Sensores/headerSensores.h"
+#include "cstdlib"
 
 #define NUMAPARELHOS 7
 //Ir buscar valores aos respetivos sensores
@@ -26,17 +27,26 @@ public:
                  Data vib = Data(), Data hum = Data(), Data fum = Data(),
                  Data som = Data()
                  );
-    void lerSensores(SensorTemperatura temp, sensorLuz luz, sensorRadiacao rad, sensorVibracao vib, sensorHumidade humidade, sensorFumo, sensorSom som, sensorFumo fumo);
+    void inilerSensores(SensorTemperatura temp = SensorTemperatura(rand() % 15 + 20),
+                        sensorLuz luz = sensorLuz(rand() % 15 + 20),
+                        sensorRadiacao rad = sensorRadiacao(rand() % 1 + 3),
+                        sensorVibracao vib = sensorVibracao(rand() % 5 + 10),
+                        sensorHumidade humidade = sensorHumidade(rand() % 5 + 25),
+                        sensorSom som = sensorSom(rand() % 1 + 10),
+                        sensorFumo fumo = sensorFumo(rand() % 1 + 5));
+    int getTemp();
+    int getLuz();
+    int getRad();
+    int getHumidade();
+    int getFumo();
+    int getSom();
 
-
-
-
-    //ir buscar valores aos sensores
-    //Usa a class Data para ter valores de char i int, tb dá struct
-
-
-
-
+    void setTemp(int x);
+    void setLuz(int x);
+    void setRad(int x);
+    void setHumidade(int x);
+    void setFumo(int x);
+    void setSom(int x);
 };
 
 

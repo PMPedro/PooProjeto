@@ -8,11 +8,15 @@
 
 using namespace term;
 
+
+
 int main() {
     getchar();
     //Valores "altura" e "largura" Irao ser removidos dps, so estao ca para fases de testes
     interfaceClassTesting a(10, 10, 1, 1);
 }
+
+
 
 /*
  *      os que tem (*) no fianl e pq falta meter mais bonito, ou tratar certos detalhes
