@@ -30,8 +30,15 @@ int main() {
  *  zrem
  *  zlista
  *  zcomp
+ *  zprops
  *
  * */
+
+/*Deixado a meio
+ *  pmod
+ *
+ * */
+
 
 /**
  * N percebi bem o q e para fzr
