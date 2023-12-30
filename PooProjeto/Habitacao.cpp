@@ -3,10 +3,10 @@
 //
 
 #include "Habitacao.h"
- Habitacao::Habitacao(int dimensaoX, int dimensaoY, const vector <Zona> &zonas) {
+Habitacao::Habitacao(int dimensaoX, int dimensaoY, const vector <Zona> &zonas) {
 
     veriTamanho(&dimensaoX);
-     veriTamanho(&dimensaoY);
+    veriTamanho(&dimensaoY);
     this->dimensaoX = dimensaoX;
     this->dimensaoY = dimensaoY;
     if(!zonas.empty())

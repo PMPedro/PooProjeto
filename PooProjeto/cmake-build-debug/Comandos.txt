@@ -1,3 +1,2 @@
-avanca 2
-avanca n
-avanca 4
+hnova 2 2
+hrem

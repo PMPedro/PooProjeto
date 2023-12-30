@@ -15,8 +15,8 @@ public:
     comandosOutput();
 
     void prox(int *instante);
-    void hNova(cWindow *habi, Habitacao *casa, int x, int y);
-    void hrem (cWindow *habi, Habitacao *casa);
+    void hNova(Habitacao *casa, int x, int y);
+    void hrem (Habitacao *casa, vector<cWindow*> &czonas);
     void zLista(cWindow *comando, Habitacao *casa);
 };
 

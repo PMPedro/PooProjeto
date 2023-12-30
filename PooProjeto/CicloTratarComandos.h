@@ -19,7 +19,7 @@ private:
 public:
     trataComandos();
 
-    void comando(string comando, cWindow *listComandos, cWindow *habi, int *instante, Habitacao *casa, vector <cWindow> *cZonas);
+    void comando(string comando, cWindow *listComandos, int *instante, Habitacao *casa, vector <cWindow*> &cZonas);
 
 
 };

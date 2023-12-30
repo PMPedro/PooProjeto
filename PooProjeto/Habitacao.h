@@ -28,11 +28,6 @@ public:
     bool checkZonasQuant();
     vector <Zona> getZonas();
 
-
-
-
-
-
     //fazer um set dimensao x e y, com min 2 e max 4;
     //fazer constructor
     //pode ter infinitas zonas

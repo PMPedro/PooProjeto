@@ -15,42 +15,44 @@ using namespace std;
 
 class interfaceClassTesting  {
 private:
-    cWindow habi;
     cWindow getComandos;
     cWindow listComandos;
-    vector<cWindow> sczonas;
+    vector<cWindow*> sczonas;
 
 public:
-    interfaceClassTesting(int altura, int largura, int w, int h) : habi(altura,largura,w,h), getComandos(10,10,10,10), listComandos(altura,largura,w,h)  {
-        habi.setWindow(1,1,1,1,"Habitacao");
+    interfaceClassTesting(int altura, int largura, int w, int h) : getComandos(30,30,30,30), listComandos(altura,largura,40,40)  {
+        //habi.setWindow(1,3,1,1,"");
         Terminal &t = Terminal::instance();
 
-
-
-        getComandos.setWindow(5, t.getNumCols() - 2, t.getNumRows() - 10, 0, "Comandos");
-        listComandos.setWindow(t.getNumRows() / 2,20,2,t.getNumCols() - 20, "list");
+        getComandos.setWindow(5, t.getNumCols() - 2, t.getNumRows() - 6, 1, "Comandos");
+        listComandos.setWindow(t.getNumRows() -15,50,0,t.getNumCols() - 50, "List");
         trataComandos dealWithComando;
         Habitacao pcasa(2 , 2 );
         Habitacao *casa = &pcasa;
 
-        Habitacao habitacao(1,2);
+        //Habitacao habitacao(1,2);
         int instante = 0;
 
         string comando;
+        string aux;
+        aux = "Instante ";
+
         int indi = 0;
         while(comando != "sair"){
             getComandos << "<>" >> comando;
             getComandos.clear();
-            if(indi == 4){
+            if(indi == 8){
                 listComandos.clear();
                 indi = 0;
             }
 
-
-            dealWithComando.comando(comando, &listComandos, &habi, &instante, casa, &sczonas);
-            listComandos << instante;
+            dealWithComando.comando(comando, &listComandos, &instante, casa, sczonas);
+            aux += to_string(instante);
+            listComandos << aux;
+            aux = "Instante ";
             indi++;
         }
+
     };
 };
 

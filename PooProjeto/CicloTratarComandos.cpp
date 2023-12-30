@@ -9,20 +9,20 @@ trataComandos::trataComandos() {
 }
 
 
-void trataComandos::comando(std::string comando, cWindow *listComandos, cWindow *habi, int *instante, Habitacao *casa,vector <cWindow> *cZonas) {
+void trataComandos::comando(std::string comando, cWindow *listComandos, int *instante, Habitacao *casa,vector <cWindow*> &cZonas) {
     std::vector<std::string> check;
     Interface interface;
 
 
-    check = interface.trataComando(comando, instante, habi, listComandos, casa,  cZonas);
+    check = interface.trataComando(comando, instante, listComandos, casa,  cZonas);
 
     auto it = check.begin();
 
     if(check[0] == "true") {
-        *listComandos << "Comando '" << comando << "' validado.\n";
+       // *listComandos << "Comando '" << comando << "' validado.\n";
 
     }else if(check[0] == "false"){
-        *listComandos << "Comando '"<< comando << "' Invalido.\n";
+        //*listComandos << "Comando '"<< comando << "' Invalido.\n";
 
     }
     //caso do exec

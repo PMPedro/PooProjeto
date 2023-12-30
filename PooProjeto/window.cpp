@@ -98,7 +98,7 @@ void cWindow::setWindow(int altura, int largura, int w, int h, std::string text)
         w = 1;
     if(h == 0)
         h = 1;
-    t << move_to(h-1, w-1) <<  "[" << text << "]";
+    //t << move_to(h-1, w-1) <<  "[" << text << "]";
     window = newwin(altura,largura,w,h);
     box(window, 0, 0);
     wrefresh(window);
