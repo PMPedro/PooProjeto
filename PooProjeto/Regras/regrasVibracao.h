@@ -12,7 +12,7 @@ class RegrasVibracao : Regras {
     int min = 0;
 
 public:
-    RegrasVibracao(int x) : Regras(x,0, 10000, "v") {};
+    RegrasVibracao(int x) : Regras(0, 10000, "v") {};
 //Faz regras e devolve "true" or "false", o Processador mais tarde ira processar esse resultado (de acordo com os comandos q temos de fazer)
     bool igual_X(int x);
     bool menor_que (int x);

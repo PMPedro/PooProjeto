@@ -3,8 +3,8 @@
 //
 
 #include "Regras.h"
-Regras::Regras(int valor, int min, int max, std::string letra) {
-    this->valor = valor;
+Regras::Regras(int min, int max, std::string letra) {
+
     this->min = min;
     this->max = max;
     this->pro = letra;

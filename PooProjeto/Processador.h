@@ -4,9 +4,9 @@
 
 #ifndef TP_PROCESSADOR_H
 #define TP_PROCESSADOR_H
-#include "Regras.h"
 #include <memory>
 #include <vector>
+#include "Regras/HeaderRegras.h"
 //Vai fzr include do header das regras
 //1 propriedade qq pode ter mais q 1 regra, por exemplo, a temperatura pode  ter a regra de ser menor q 4, e ser menor q 2 por exemplo
 //regras vao ser bool, fzr o resto aqui, vai ser o Procesador q controla e faz a gestao das regras
@@ -14,9 +14,8 @@
 
 class Processador {
     vector <Regras> regras;
-
     int id;
-     static int nextid;
+    static int nextid;
 
 public:
 

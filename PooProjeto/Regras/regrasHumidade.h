@@ -11,7 +11,7 @@ class RegraHumidade : Regras {
 
 
 public:
-        RegraHumidade(int x) : Regras(x,0,100,"h") {};
+        RegraHumidade(int x) : Regras(0,100,"h") {};
 //Faz regras e devolve "true" or "false", o Processador mais tarde ira processar esse resultado (de acordo com os comandos q temos de fazer)
 
         ~RegraHumidade();

@@ -10,7 +10,7 @@
 class RegrasFumo : Regras {
 
 public:
-    RegrasFumo(int x) : Regras(x, 0, 100,"f") {};
+    RegrasFumo() : Regras(0, 100,"f") {};
 //Faz regras e devolve "true" or "false", o Processador mais tarde ira processar esse resultado (de acordo com os comandos q temos de fazer)
 
     ~RegrasFumo();

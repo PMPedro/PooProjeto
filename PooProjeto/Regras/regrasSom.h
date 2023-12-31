@@ -10,7 +10,7 @@ class RegrasSom : Regras {
     int min = 0;
 
 public:
-    RegrasSom(int x) : Regras(x,0 , 1000000, "o") {};
+    RegrasSom(int x) : Regras(0 , 1000000, "o") {};
 //Faz regras e devolve "true" or "false", o Processador mais tarde ira processar esse resultado (de acordo com os comandos q temos de fazer)
     bool igual_X(int x);
     bool menor_que (int x);

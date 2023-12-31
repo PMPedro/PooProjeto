@@ -12,14 +12,14 @@ using namespace std;
 //dps nos filhos, vai ser geridos se n ultrapassa os valores possiveis da propriedade defenida e redefenicao das regras (caso necessario) 
 
 class Regras {
-    int valor; //valor a ser comparado
+
     int min;
     int max;
     string pro;
 
 public:
 
-    Regras(int valor = 0, int min = 0, int max = 0, string letra =" ");
+    Regras(int min = 0, int max = 0, string letra =" ");
 
     void setValor(int x);
     int getValor();

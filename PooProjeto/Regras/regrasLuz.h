@@ -12,7 +12,7 @@ class RegrasLuz : Regras {
 
 
 public:
-    RegrasLuz(int x) : Regras(x,0,100,"m") {};
+    RegrasLuz(int x) : Regras(0,100,"m") {};
 //Faz regras e devolve "true" or "false", o Processador mais tarde ira processar esse resultado (de acordo com os comandos q temos de fazer)
 
     ~RegrasLuz();

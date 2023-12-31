@@ -126,6 +126,12 @@ bool Interface::veriZnova(const std::string& comando, Habitacao *casa, vector <c
         Propriedade aux; //cria as propriedades para essa zona
         aux.inilerSensores(); //inicializa as propriedades com valores random
         h.setPropriedades(aux); //adiciona as propriedades a zona aux criada
+        Processador procaux;
+
+        //procaux.addRegra()
+
+
+
         (*casa).addZonas(h); //adiciona a zona á habitacao
         string nome = "[Zona -> ";
         nome += to_string(index + 1);
@@ -295,7 +301,7 @@ bool Interface::veriPmod(const std::string& comando, Habitacao *casa, cWindow *l
     aux = (*casa).getZonas();
     Propriedade auxP;
     bool found;
-
+    vector <Processador> auxProc;
     if(!(aux.empty())){
         for(int i = 0; i < aux.size(); i++){
             if(aux[i].getId() == idZona){
