@@ -19,8 +19,10 @@ void Processador::addRegra(Regras r) {
 bool Processador::checkPropriedade(int valor, std::string letra) {
     if(!(this->regras.empty())){
         for(int i = 0; i < regras.size(); i ++){
-        if(regras[i].getLetra() == letra);
-        
+        if(regras[i].getLetra() == letra){
+            regras[i].check(valor);
+        }
+
         }
     }
 }
