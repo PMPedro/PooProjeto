@@ -1,5 +1,5 @@
 # ninja log v5
-18	536	7257397007464725	build.ninja	45d50d6b22b76826
+18	536	7257409611742260	build.ninja	45d50d6b22b76826
 20	2466	7257364701940921	CMakeFiles/PooProjeto.dir/Zonas.cpp.obj	97decb9bc235edcf
 25	1061	7257291227672703	CMakeFiles/PooProjeto.dir/Aparelhos.cpp.obj	58adca9243095561
 1265	2922	7257364706549481	CMakeFiles/PooProjeto.dir/interfaceClassTesting.cpp.obj	13466e45ccd0b2d2
@@ -36,3 +36,25 @@
 2024	3022	7257291247327698	CMakeFiles/PooProjeto.dir/Aparelhos/Refrigerador.cpp.obj	afbebaba5704315
 2089	3050	7257291247609871	CMakeFiles/PooProjeto.dir/Aparelhos/Lampada.cpp.obj	4f6d1347cf7c8228
 9434	11001	7256866215887145	CMakeFiles/PooProjeto.dir/utils.cpp.obj	e4d7d4e535232736
+573	2509	7257411625148907	CMakeFiles/PooProjeto.dir/Regras/regrasFumo.cpp.obj	44538d151b3e1536
+588	2543	7257411625556804	CMakeFiles/PooProjeto.dir/Regras/regrasRadiacao.cpp.obj	e1c1ab6cbc3aa538
+578	2584	7257411625536268	CMakeFiles/PooProjeto.dir/Regras/regrasHumidade.cpp.obj	45f1b442aa3f24b4
+593	2601	7257411625556804	CMakeFiles/PooProjeto.dir/Regras/regrasVibracao.cpp.obj	cd71a3210a3cafb2
+583	2619	7257411625810293	CMakeFiles/PooProjeto.dir/Regras/regrasSom.cpp.obj	2bee60e3e388c6d1
+141	2634	7257411626112330	CMakeFiles/PooProjeto.dir/Regras.cpp.obj	8244735801fb438f
+134	2851	7257411628789311	CMakeFiles/PooProjeto.dir/Processador.cpp.obj	a4d7b80f200ad430
+2853	3029	7257411630617149	CMakeFiles/PooProjeto.dir/regrasitself/regrait.cpp.obj	2de6283314bcf327
+146	3088	7257411631039575	CMakeFiles/PooProjeto.dir/main.cpp.obj	90803a7f1d010c87
+3031	3220	7257411632177224	CMakeFiles/PooProjeto.dir/regrasitself/regrabetween.cpp.obj	1ed0fc40f3768821
+3089	3295	7257411632738818	CMakeFiles/PooProjeto.dir/regrasitself/RegraEqual.cpp.obj	488de7c9e357112c
+3221	3401	7257411634200552	CMakeFiles/PooProjeto.dir/regrasitself/rfora.cpp.obj	bb7ad0e44648f865
+3296	3502	7257411635356368	CMakeFiles/PooProjeto.dir/regrasitself/maiorq.cpp.obj	1c390ef99a2b12e0
+3402	3557	7257411635876368	CMakeFiles/PooProjeto.dir/regrasitself/menorq.cpp.obj	51acc235c6048539
+150	3608	7257411636379919	CMakeFiles/PooProjeto.dir/Zonas.cpp.obj	97decb9bc235edcf
+567	4109	7257411641348828	CMakeFiles/PooProjeto.dir/Habitacao.cpp.obj	1a814cc679acae22
+2585	4124	7257411641582922	CMakeFiles/PooProjeto.dir/Regras/regrasTemperatura.cpp.obj	366b7d8efc90ef4f
+2512	4128	7257411641632899	CMakeFiles/PooProjeto.dir/Regras/regrasLuz.cpp.obj	8ae15cbf75cfc117
+2603	4332	7257411643670875	CMakeFiles/PooProjeto.dir/interfaceClassTesting.cpp.obj	13466e45ccd0b2d2
+2621	4518	7257411645538080	CMakeFiles/PooProjeto.dir/CicloTratarComandos.cpp.obj	fb0071bf3b34497
+2634	4644	7257411646796271	CMakeFiles/PooProjeto.dir/comandosOutput.cpp.obj	bec4bf0a2b2cdd2a
+2546	5240	7257411652747899	CMakeFiles/PooProjeto.dir/Interface.cpp.obj	7d6d12cb6c030255

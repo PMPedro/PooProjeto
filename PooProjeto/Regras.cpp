@@ -3,24 +3,18 @@
 //
 
 #include "Regras.h"
-Regras::Regras(int min, int max, std::string letra) {
+int Regras::proxid = 1;
+Regras::Regras(int min, int max, std::string letra, regrait regra) : valorRegra(regra) {
 
     this->min = min;
     this->max = max;
     this->pro = letra;
+    this->id = proxid++;
 }
 
-void Regras::setValor(int x) {this->valor = x;}
-int Regras::getValor() {return this->valor;}
 
 Regras::~Regras() {
 
-}
-
-
-bool Regras::igual_X(int x) {
-    x=check(x);
-    return (this->getValor() == x);
 }
 
 int Regras::check(int valor) {
@@ -29,23 +23,30 @@ int Regras::check(int valor) {
     return valor;
 }
 
-bool Regras::maior_que(int x) {
-    return (this->getValor() < x);
-}
-
-bool Regras::entre(int menor, int maior) {
-    menor = check(menor);
-    return ((this->getValor() >= menor) && (this->getValor() <= maior));
-}
-
-bool Regras::fora(int menor, int maior) {
-    menor = check(menor);
-    return !((this->getValor() >= menor) && (this->getValor() <= maior));
-}
-
 string Regras::getLetra() {
     return this->pro;
 }
+
+void Regras::setRegra(maioq regra) {this->valorRegra = regra;}
+
+void Regras::setRegra(rfora regra) {this->valorRegra = regra;}
+
+void Regras::setRegra(menorq regra) {this->valorRegra = regra;}
+
+void Regras::setRegra(rEqual regra) {this->valorRegra = regra;}
+
+void Regras::setRegra(rbeetween regra) {this->valorRegra = regra;}
+
+bool Regras::getRegraValue(int valor) {
+    return this->valorRegra.rule(valor);
+}
+
+int Regras::getid() {
+    return this->id;
+}
+
+
+
 
 
 

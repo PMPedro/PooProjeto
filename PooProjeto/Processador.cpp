@@ -27,3 +27,21 @@ bool Processador::checkPropriedade(int valor, std::string letra) {
         }
     }
 }
+
+vector<Regras> Processador::getRegras() {
+    return this->regras;
+}
+
+bool Processador::remRegra(int index) {
+    int proc = false;
+    if(!(regras.empty())){
+        for(int i = 0; i < regras.size(); i++){
+            if(regras[i].getid() == index){
+                regras.erase(regras.begin() + i);
+                proc = true;
+                break;
+            }
+        }
+    }
+    return proc;
+}

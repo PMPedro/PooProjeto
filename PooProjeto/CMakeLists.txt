@@ -78,7 +78,15 @@ add_executable(PooProjeto main.cpp
         regrasitself/RegraEqual.cpp
         regrasitself/RegraEqual.h
         regrasitself/regrabetween.cpp
-        regrasitself/regrabetween.h)
+        regrasitself/regrabetween.h
+        regrasitself/rfora.cpp
+        regrasitself/rfora.h
+        regrasitself/maiorq.cpp
+        regrasitself/maiorq.h
+        regrasitself/menorq.cpp
+        regrasitself/menorq.h
+        regrasitself/typesRules.h
+)
 
 
 #target_link_libraries(${PROJECT_NAME} C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/PooProjeto/PDCurses-3.9/wincon/pdcurses.a)

@@ -4,7 +4,8 @@
 
 #ifndef TP_REGRAS_H
 #define TP_REGRAS_H
-
+#include "regrasitself/typesRules.h"
+#include "vector"
 using namespace std;
 #include "iostream"
 //FALTA ALTERAR
@@ -16,24 +17,33 @@ class Regras {
     int min;
     int max;
     string pro;
+    regrait valorRegra;
+    int id;
+    static int proxid;
+
+
 
 public:
 
-    Regras(int min = 0, int max = 0, string letra =" ");
+    Regras(int min = 0, int max = 0, string letra =" ", regrait regra = regrait(0,999));
 
     void setValor(int x);
     int getValor();
 
-    bool igual_X(int x);
-    bool menor_que (int x);
-    bool maior_que (int x);
-    bool entre (int menor, int maior);
-    bool fora (int menor , int maior);
     int check(int valor);
     string getLetra();
+    void setRegra(maioq regra);
+    void setRegra(menorq regra);
+    void setRegra(rEqual regra);
+    void setRegra(rbeetween regra);
+    void setRegra(rfora regra);
+
+    bool getRegraValue(int valor);
+    int getid();
 
 
     ~Regras();
+
 
 
     /*Fazer->

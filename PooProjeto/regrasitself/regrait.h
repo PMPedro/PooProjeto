@@ -14,7 +14,10 @@ private:
 public:
     regrait(int value1, int value2 = 999);
 
-    virtual bool rule(int value1, int valor_a_comparar, int value2);
+    virtual bool rule(int valor_a_comparar);
+
+    int getvalor1();
+    int getvalor2();
 
 
 

@@ -26,6 +26,9 @@ public:
     void addRegra(Regras r);
 
     bool checkPropriedade(int valor, string letra);
+    vector <Regras> getRegras();
+
+    bool remRegra(int index); //caso deia return true qr dizer q a regra foi removida com sucesso
 
 };
 

@@ -12,7 +12,7 @@ private:
 public:
     rEqual(int valorcompararcom) : regrait(valorcompararcom) {};
 
-    bool rule(int value1, int valor_a_comparar, int value2 = 0) override;
+    bool rule(int valor_a_comparar) override;
 
 
 

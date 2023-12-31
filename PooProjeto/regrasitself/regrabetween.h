@@ -10,11 +10,11 @@ private:
 
 
 public:
-    rbeetween(int valorcompararcom) : regrait(valorcompararcom) {};
+    rbeetween(int value1, int value2) : regrait(value1, value2) {};
 
 
 
-    bool rule(int value1, int valor_a_comparar, int value2) override;
+    bool rule(int valor_a_comparar) override;
 
 
 
