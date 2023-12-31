@@ -9,12 +9,13 @@
 #include <iostream>
 #include "window.h"
 #include "Habitacao.h"
+#include "utils.h"
+
 class Interface {
 public:
-    std::vector<std::string> trataComando(const std::string&comando, int *instante, cWindow *listComandos, Habitacao *casa, vector <cWindow*> &cZonas);
+    std::vector<std::string> trataComando(const std::string&comando, int *instante, cWindow *listComandos, Habitacao *casa, vector <cWindow*> &cZonas, int &flag, int &flag2);
 private:
-    std::vector<std::string> leFicheiro(const std::string& nFicheiro, int *instante, cWindow *listComandos, Habitacao *casa, vector <cWindow*> cZonas);
-    std::string limpaComando(const std::string&comando);
+    std::vector<std::string> leFicheiro(const std::string& nFicheiro, int *instante, cWindow *listComandos, Habitacao *casa, vector <cWindow*> cZonas, int &flag, int &flag2);
     bool veriAvanca(const std::string&comando, int *instante);
     bool veriHnova(const std::string& comando, Habitacao *casa, vector <cWindow*> &cZonas);
     bool veriZnova(const std::string& comando, Habitacao *casa, vector <cWindow*> &cZonas);

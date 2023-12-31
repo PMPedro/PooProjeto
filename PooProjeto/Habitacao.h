@@ -27,10 +27,10 @@ public:
     int getDimY();
     bool checkZonasQuant();
     vector <Zona> getZonas();
-
+    void limpaZonas();
+    void removeZona(int index);
     //fazer um set dimensao x e y, com min 2 e max 4;
     //fazer constructor
-    //pode ter infinitas zonas
     //pode nao ter zonas tb
     //permitir constuir e demolir uma habitacao, com toda a sua info
 

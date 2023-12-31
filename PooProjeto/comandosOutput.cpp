@@ -22,6 +22,7 @@ void comandosOutput::hNova(Habitacao *casa, int x, int y) {
 }
 
 void comandosOutput::hrem(Habitacao *casa, vector<cWindow*> &czonas) {
+    casa->limpaZonas();
     for (auto* window : czonas) {
         (*window).totalClear();
         delete window;
@@ -34,13 +35,19 @@ void comandosOutput::zLista(cWindow *comando, Habitacao *casa) {
     vector <Zona> aux;
     aux = (*casa).getZonas();
     if(aux.empty()){
-        *comando << "\n" << "Ainda nao existem Zonas!";
+        *comando << "Ainda nao existem Zonas!";
     }else{
+        *comando << "N de zonas = " + to_string(aux.size()) + ".";
+        *comando << "";
+        *comando << "Lista de Zonas:";
+        *comando << "";
         for(int i = 0; i < aux.size(); i++){
-            (*comando).clear();
-            *comando << "Zona Id-> " << aux[i].getId() << "\nNumero de Sensores-> " << aux[i].getNumSensoeres() << "\nNumero de Aparelhos-> "<<aux[i].getNumAparelhos()
-            << "\nNumero de Processadores-> " << aux[i].getNumProcessadores() << "Pos x | Pos y-> " << aux[i].getposx() << " | " << aux[i].getposy();
-            getchar();
+            *comando << "\tZona Id -> " + to_string(aux[i].getId());
+            *comando << "\tNumero de Sensores -> " + to_string(aux[i].getNumSensoeres());
+            *comando << "\tNumero de Aparelhos -> " + to_string(aux[i].getNumAparelhos());
+            *comando << "\tNumero de Processadores -> " + to_string(aux[i].getNumProcessadores());
+            *comando << "\tPos x = " + to_string(aux[i].getposx()) + " | Pos y = " + to_string(aux[i].getposy());
+            *comando << "";
         }
     }
 

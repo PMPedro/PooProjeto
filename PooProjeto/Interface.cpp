@@ -5,9 +5,11 @@
 #include "Interface.h"
 #include <sstream>
 #include <fstream>
+#include <cstdlib>
+#include <ctime>
 #include "comandosOutput.h"
 
-std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro , int *instante, cWindow *listComandos, Habitacao *casa, vector <cWindow*> cZonas){
+std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro , int *instante, cWindow *listComandos, Habitacao *casa, vector <cWindow*> cZonas, int &flag, int &flag2){
     std::ifstream ifich(nFicheiro);
     std::string linha;
     std::vector<std::string> resultado;
@@ -21,7 +23,7 @@ std::vector<std::string> Interface::leFicheiro(const std::string& nFicheiro , in
     while(getline(ifich,linha)){
 
         trataLinha.clear();
-        trataLinha = trataComando(linha, instante, listComandos, casa, cZonas);
+        trataLinha = trataComando(linha, instante, listComandos, casa, cZonas, flag,flag2);
 
 
         if (trataLinha[0] == "true"){
@@ -68,21 +70,21 @@ bool Interface::veriHnova(const std::string& comando, Habitacao *casa, vector <c
         casa->setDimensaoY(nColunas);
 
         // Calculate window dimensions based on grid size
-        int cellWidth = 8;
-        int cellHeight = 16;
+        int cellWidth = 9;
+        int cellHeight = 18;
 
         int xOffset = 0; // Adjust this value based on the desired horizontal spacing
         int yOffset = 1; // Adjust this value based on the desired vertical spacing
         int conta = 1;
-        for (int i = 1; i < nLinhas + 1; ++i) {
-            for (int j = 0; j < nColunas; ++j) {
+        for (int i = 0; i < nColunas; ++i) {
+            for (int j = 0; j < nLinhas; ++j) {
                 int x = j * (cellWidth + xOffset);
                 int y = i * (cellHeight + yOffset);
 
                 // Adjust window creation as needed
                 auto* newWindow = new cWindow(cellWidth, cellHeight, x, y);
                 // Push the pointer to the new window into the vector
-                (*newWindow) << "Janela " + to_string(conta);
+                (*newWindow) << "[" + to_string(conta) + "]";
                 cZonas.push_back(newWindow);
                 conta++;
             }
@@ -90,7 +92,6 @@ bool Interface::veriHnova(const std::string& comando, Habitacao *casa, vector <c
     }
     return true;
 }
-
 
 bool Interface::veriZnova(const std::string& comando, Habitacao *casa, vector <cWindow*>& cZonas) {
     std::istringstream iss(comando);
@@ -102,27 +103,34 @@ bool Interface::veriZnova(const std::string& comando, Habitacao *casa, vector <c
     if (!(iss >> keyword >> linha >> coluna) || iss.get() != EOF)  {
         return false;
     }
-    int index = (linha - 1) * casa->getDimX() + (coluna - 1);
+    //int index = (coluna - 1) * casa->getDimX() + (linha - 1);
+    int index = (linha - 1) + (coluna - 1) * casa->getDimX();
+    //verifica se existe uma casa
+    if(casa != nullptr){
+        vector<Zona> auxiliar = casa->getZonas();
+        if (!auxiliar.empty()) {
+            for (const auto& auxil : auxiliar) {
+                if (auxil.getposy() == coluna && auxil.getposx() == linha) {
+                    return false;
+                }
+            }
+        }
+    }
 
-    casa->addZonas(linha, coluna, "C");
-//verifica se existe uma casa
-if(!(casa == nullptr)){
-    Zona h(rand() % 1 + 1000, "", linha, coluna); //cria uma zona auxiliar
-    Propriedade aux; //cria as propriedades para essa zona
-    aux.inilerSensores(); //inicializa as propriedades com valores random
-    h.setPropriedades(aux); //adiciona as propriedades a zona aux criada
-    (*casa).addZonas(h); //adiciona a zona á habitacao
-
-    //aqui falta fazer um if para verificar as dimensoes dacasa, para meter a zona dentro da casa (para ficasr ,mais bonito)
-
-}
-    if(!(cZonas.empty())){
-        int aux = (cZonas).size();
-        (*cZonas[index]) << "[Z]";
-        //(cZonas)[12]->setWindow(2,2 , linha, coluna, "NOVAZONA");
+    if(index > casa->getDimY() * casa->getDimX()){
+        return false;
     }else{
-        //cWindow newWindow(2, 2, linha, coluna);
-        //newWindow.setWindow(2, 2, linha, coluna, "NOVA");
+        int id = rand() % 1000 + 1;
+        //casa->addZonas(linha, coluna, "C");
+        Zona h(id, "", linha, coluna); //cria uma zona auxiliar
+        Propriedade aux; //cria as propriedades para essa zona
+        aux.inilerSensores(); //inicializa as propriedades com valores random
+        h.setPropriedades(aux); //adiciona as propriedades a zona aux criada
+        (*casa).addZonas(h); //adiciona a zona á habitacao
+        string nome = "[Zona -> ";
+        nome += to_string(index + 1);
+        nome += "]";
+        (*cZonas[index]) << nome;
     }
     return true;
 }
@@ -141,7 +149,28 @@ bool Interface::veriZrem(const std::string& comando, Habitacao *casa, vector <cW
     vector<Zona> aux;
     aux = (*casa).getZonas();
     int w, h;
+    //int index = (linha - 1) + (coluna - 1) * casa->getDimX();
     if(!(aux.empty())){
+        for(int j = 0; j < aux.size(); j++){
+            if(aux[j].getId() == idZona){
+                w = aux[j].getposx();
+                h = aux[j].getposy();
+                int index = (w - 1) + (h - 1) * casa->getDimX();
+                cout << index;
+                casa->removeZona(j);
+                (*cZonas[index]).clear();
+                string nome = "[";
+                nome += to_string(index + 1);
+                nome += "]";
+                (*cZonas[index]) << nome;
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    /*if(!(aux.empty())){
     for(int j = 0; j < aux.size(); j++){
 
         if(aux[j].getId() == idZona ){
@@ -152,14 +181,14 @@ bool Interface::veriZrem(const std::string& comando, Habitacao *casa, vector <cW
 
     }
     }
-
-    if(!((cZonas).empty())){
+*/
+    /*if(!((cZonas).empty())){
         for(int i; i < (cZonas).size();i++){
        if(((cZonas)[i]->getW() == w) && ((cZonas)[i]->getH() == h))
            (cZonas)[i]->totalClear();
         }
     }
-
+*/
     return true;
 }
 
@@ -186,13 +215,13 @@ if(!(aux.empty())){
         found = true;
         if(aux[i].getId() == idZona){
         if((s1.empty()))
-            (*listComando) << "Nao existem Sensores na zona " << i;
+            (*listComando) << "Nao existem Sensores na zona " + to_string(idZona);
         a1 = aux[i].getAparelho();
         if((a1.empty()))
-            (*listComando) << "Nao existem Aparelhos na zona " << i;
+            (*listComando) << "Nao existem Aparelhos na zona " + to_string(idZona);
         p1 = aux[i].getProcessador();
         if((p1.empty()))
-            (*listComando) << "Nao existem Processadores na zona " << i;
+            (*listComando) << "Nao existem Processadores na zona " + to_string(idZona);
 
         if(!(s1.empty()))
             (*listComando) << s1[i].getId();
@@ -229,14 +258,22 @@ bool Interface::veriZprops(const std::string& comando, Habitacao *casa ,cWindow 
             if(aux[i].getId() == idZona){
                 found = true;
                 auxP = aux[i].getPropriedades();
-                (*listComandos) << "Temperatura " << auxP.getTemp() << "\nLuz "  << auxP.getLuz() << "\nSom" << auxP.getSom() << "\nHumidade " << auxP.getHumidade() << "\nRadiacao " << auxP.getRad() <<"\nFumo " <<auxP.getFumo();
+                (*listComandos) << "";
+                (*listComandos) << "Propriedades da Zona " + to_string(idZona) + ":";
+                (*listComandos) << "";
+                (*listComandos) << "\tTemperatura - " + to_string(auxP.getTemp());
+                (*listComandos) << "\tLuz - "  + to_string(auxP.getLuz());
+                (*listComandos) << "\tSom - " + to_string(auxP.getSom());
+                (*listComandos) << "\tHumidade - " + to_string(auxP.getHumidade());
+                (*listComandos) << "\tRadiacao - " + to_string(auxP.getRad());
+                (*listComandos) << "\tFumo - " + to_string(auxP.getFumo());
                 break;
             }
         }
     }
 
     if(!found){
-        (*listComandos) << "Zona com id " << idZona << " nao encontrada!";
+        (*listComandos) << "Zona com id " + to_string(idZona) + " nao encontrada!";
     }
     return true;
 }
@@ -481,28 +518,19 @@ std::string Interface::veriExec(const std::string& comando) {
     return nFich;
 }
 
-std::string Interface::limpaComando(const std::string&comando){
-    std::string final = comando;
-    int pos = final.find(' ');
-    if(pos !=std::string::npos){
-        final = final.substr(0,pos);
-        return final;
-    }else{
-        return comando;
-    }
-}
-
-std::vector<std::string> Interface::trataComando(const std::string&comando, int *instante, cWindow *listComandos, Habitacao *casa, vector <cWindow*> &cZonas){
+std::vector<std::string> Interface::trataComando(const std::string&comando, int *instante, cWindow *listComandos, Habitacao *casa, vector <cWindow*> &cZonas, int &flag, int &flag2){
     std::string limpo = limpaComando(comando);
     comandosOutput controlerComandos;
     //std::cout << "Comando limpo: "<< limpo<< std::endl;
-    if(comando == "prox"){
+
+    if(comando == "prox"){ //===================================================kinda feito muda o instante mas ainda n altera os objetos
         //executa prox
         controlerComandos.prox(instante);
         return {"true"};
-    }else if(comando == "hrem"){
+    }else if(comando == "hrem"){ //===================================================Feito
         (*listComandos) << "Habitacao Apagada!";
         controlerComandos.hrem(casa, cZonas);
+        flag = 1;
         return {"true"};
     }else if(comando == "zlista"){
         //executa zlista
@@ -518,19 +546,26 @@ std::vector<std::string> Interface::trataComando(const std::string&comando, int 
         }else{
             return {"false"};
         }
-    }else if(limpo == "hnova"){
+    }else if(limpo == "hnova"){//===================================================Feito
+        if(flag2 == 1){
+            controlerComandos.hrem(casa, cZonas);
+            (*listComandos) << "Habitacao refeita!";
+            flag2 = 0;
+        }
         if(veriHnova(comando, casa, cZonas)){
-            //execHnova(comando);
+            //execHnova;
+            flag2 = 1;
             return {"true"};
         }else{
             return {"false"};
         }
-    }else if(limpo == "znova"){
+    }else if(limpo == "znova"){//===================================================Feito
         if(veriZnova(comando, casa, cZonas)){
 
             //execAvanca();veriZnova
             return {"true"};
         }else{
+            (*listComandos) << "Impossivel adicionar Zona!";
             return {"false"};
         }
     }else if(limpo == "zrem"){
@@ -653,7 +688,7 @@ std::vector<std::string> Interface::trataComando(const std::string&comando, int 
         if(result == "Syntax Error"){
             return {"false"};
         }else{
-            std::vector<std::string> resVector = leFicheiro(result, instante, listComandos, casa, cZonas);
+            std::vector<std::string> resVector = leFicheiro(result, instante, listComandos, casa, cZonas, flag, flag2);
 
             if (resVector[0] == "OP_ERROR"){//n conseguiu abrir
                 return {"false"};

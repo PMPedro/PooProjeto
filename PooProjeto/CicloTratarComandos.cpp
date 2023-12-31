@@ -9,12 +9,12 @@ trataComandos::trataComandos() {
 }
 
 
-void trataComandos::comando(std::string comando, cWindow *listComandos, int *instante, Habitacao *casa,vector <cWindow*> &cZonas) {
+void trataComandos::comando(std::string comando, cWindow *listComandos, int *instante, Habitacao *casa,vector <cWindow*> &cZonas, int &flag, int &flag2) {
     std::vector<std::string> check;
     Interface interface;
 
 
-    check = interface.trataComando(comando, instante, listComandos, casa,  cZonas);
+    check = interface.trataComando(comando, instante, listComandos, casa,  cZonas, flag, flag2);
 
     auto it = check.begin();
 

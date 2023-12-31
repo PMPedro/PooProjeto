@@ -18,7 +18,6 @@ class Zona {
     vector <Processador> processador;
     int posx, posy;
     int id;
-     int nexid = 1;
     string letra;
     //unique_ptr<vector<Aparelho>> example;
 
@@ -26,8 +25,8 @@ class Zona {
 
 public:
     Zona( int id, string letra = "N", int posx = 0, int posy = 0 , Propriedade propr = Propriedade());
-    int getposx();
-    int getposy();
+    int getposx() const;
+    int getposy() const;
     void setZonePosX(int x);
     void setZonePosY(int y);
     int getNumSensores;

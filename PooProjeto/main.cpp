@@ -12,6 +12,7 @@ using namespace term;
 
 int main() {
     getchar();
+    srand(static_cast<unsigned>(time(nullptr)));
     //Valores "altura" e "largura" Irao ser removidos dps, so estao ca para fases de testes
     interfaceClassTesting a(10, 10, 1, 1);
 }

@@ -72,7 +72,7 @@ add_executable(PooProjeto main.cpp
         Aparelhos/Refrigerador.h
         Aparelhos/Lampada.cpp
         Aparelhos/Lampada.h
-        Aparelhos/headerAparelhos.h)
+        Aparelhos/headerAparelhos.h utils.h utils.h utils.cpp)
 
 
 #target_link_libraries(${PROJECT_NAME} C:/Users/pmanu/Desktop/3Ano/Poo/TP/PooProjeto/PooProjeto/PDCurses-3.9/wincon/pdcurses.a)

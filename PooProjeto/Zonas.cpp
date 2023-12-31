@@ -7,16 +7,16 @@
 
 
 Zona::Zona(int id, std::string letra, int posx, int posy, Propriedade propr) {
-    this->id = nexid++;
+    this->id = id;
     this->letra = letra;
     this->posx = posx;
     this->posy = posy;
     propriedades = Propriedade();
 }
 
-int Zona::getposx() { return this->posx; }
+int Zona::getposx() const { return this->posx; }
 
-int Zona::getposy() {return this->posy; }
+int Zona::getposy() const {return this->posy; }
 
 void Zona::setZonePosX(int x) { this->posx = x; }
 

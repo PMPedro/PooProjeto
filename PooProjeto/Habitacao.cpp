@@ -57,3 +57,13 @@ vector<Zona> Habitacao::getZonas() {
 void Habitacao::addZonas(Zona zona) {
     this->zonas.push_back(zona);
 }
+
+void Habitacao::limpaZonas() {
+    zonas.clear();
+}
+
+void Habitacao::removeZona(int index) {
+    if (index >= 0 && index < zonas.size()) {
+        zonas.erase(zonas.begin() + index);
+    }
+}
