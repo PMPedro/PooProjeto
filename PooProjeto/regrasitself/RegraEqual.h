@@ -8,8 +8,12 @@
 class rEqual : public regrait {
 private:
 
+
 public:
-    rEqual(int x) : regrait(x) {};
+    rEqual(int valorcompararcom) : regrait(valorcompararcom) {};
+
+    bool rule(int value1, int valor_a_comparar, int value2 = 0) override;
+
 
 
 };

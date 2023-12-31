@@ -10,10 +10,11 @@ class regrait {
 private:
     int value1;
     int value2;
-public:
-    regrait(int value1, int value2);
 
-    bool rule(int value1, int value2 = 999);
+public:
+    regrait(int value1, int value2 = 999);
+
+    virtual bool rule(int value1, int valor_a_comparar, int value2);
 
 
 
