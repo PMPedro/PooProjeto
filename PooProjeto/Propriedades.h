@@ -27,19 +27,20 @@ public:
                  Data vib = Data(), Data hum = Data(), Data fum = Data(),
                  Data som = Data()
                  );
-    void inilerSensores(SensorTemperatura temp = SensorTemperatura(rand() % 15 + 20),
-                        sensorLuz luz = sensorLuz(rand() % 15 + 20),
-                        sensorRadiacao rad = sensorRadiacao(rand() % 1 + 3),
-                        sensorVibracao vib = sensorVibracao(rand() % 5 + 10),
-                        sensorHumidade humidade = sensorHumidade(rand() % 5 + 25),
-                        sensorSom som = sensorSom(rand() % 1 + 10),
-                        sensorFumo fumo = sensorFumo(rand() % 1 + 5));
+    void inilerSensores(SensorTemperatura temp = SensorTemperatura(rand() % (25 - 1 + 1) + 15),
+                        sensorLuz luz = sensorLuz(rand() % (20 - 1 + 1) + 10),
+                        sensorRadiacao rad = sensorRadiacao(rand() % (3 - 1 + 1) + 1),
+                        sensorVibracao vib = sensorVibracao(rand() % (17 - 1 + 1) + 1),
+                        sensorHumidade humidade = sensorHumidade(rand() % (25 - 1 + 1) + 5),
+                        sensorSom som = sensorSom(rand() % (30 - 1 + 1) + 1),
+                        sensorFumo fumo = sensorFumo(rand() % (10 - 1 + 1) + 1));
     int getTemp();
     int getLuz();
     int getRad();
     int getHumidade();
     int getFumo();
     int getSom();
+    int getVibracao();
 
     void setTemp(int x);
     void setLuz(int x);
@@ -47,6 +48,15 @@ public:
     void setHumidade(int x);
     void setFumo(int x);
     void setSom(int x);
+    void setVibracao(int x);
+
+    void setTemp(SensorTemperatura x);
+    void setLuz(sensorLuz x);
+    void setRad(sensorRadiacao x);
+    void setHumidade(sensorHumidade x);
+    void setFumo(sensorFumo x);
+    void setSom(sensorSom x);
+    void setVibracao(sensorVibracao x);
 };
 
 

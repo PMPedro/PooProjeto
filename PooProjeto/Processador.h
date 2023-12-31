@@ -16,7 +16,7 @@ class Processador {
     vector <Regras> regras;
 
     int id;
-     int nextid = 1;
+     static int nextid;
 
 public:
 
@@ -25,6 +25,8 @@ public:
 
     int getId();
     void addRegra(Regras r);
+
+    bool checkPropriedade(int valor, string letra);
 
 };
 

@@ -12,7 +12,7 @@ class RegrasRadiacao : Regras {
     int min = 0;
 
 public:
-    RegrasRadiacao(int x) : Regras(x) {};
+    RegrasRadiacao(int x) : Regras(x,0,100000, "d" ) {};
 //Faz regras e devolve "true" or "false", o Processador mais tarde ira processar esse resultado (de acordo com os comandos q temos de fazer)
     bool igual_X(int x);
     bool menor_que (int x);

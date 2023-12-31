@@ -18,13 +18,14 @@ class Zona {
     vector <Processador> processador;
     int posx, posy;
     int id;
+    static int nextId;
     string letra;
     //unique_ptr<vector<Aparelho>> example;
 
 
 
 public:
-    Zona( int id, string letra = "N", int posx = 0, int posy = 0 , Propriedade propr = Propriedade());
+    Zona( string letra = "N", int posx = 0, int posy = 0 , Propriedade propr = Propriedade());
     int getposx() const;
     int getposy() const;
     void setZonePosX(int x);
@@ -64,3 +65,5 @@ public:
 
 
 #endif //TP_ZONAS_H
+
+

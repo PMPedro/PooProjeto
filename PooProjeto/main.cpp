@@ -18,42 +18,8 @@ int main() {
 }
 
 
-
 /*
- *      os que tem (*) no fianl e pq falta meter mais bonito, ou tratar certos detalhes
- * */
-/*
- * Comandos já feitos ->
- *  Avanca n
- *  hnova
- *  prox
- *  znova (falta acionar id ao criar zona)
- *  zrem
- *  zlista
- *  zcomp
- *  zprops
- *
- * */
-
-/*Deixado a meio
- *  pmod
- *
- * */
-
-
-/**
- * N percebi bem o q e para fzr
- * rnova(
- */
-
-/* J feitos mas precisam de alteracoes pq estao a dar mal / sao mais complicados
- * hrem
- *
- * */
-/*
- * Coisas princiapis q faltal fazer->
- *  Meter ponteiros inteligentes nas classes
- *  Tratar dos ids (fazerlos acrescemtar sozinhos)
- *  Acabar os comandos
- *  Tratar dos Destructors (la no fundo tb e os ponteiros inteligentes)
+ * Coisas q fiz ->
+ *  IDs das classes automaticas
+ *  classes das regras (mudei as funcoes para o regras.h, e apenas enviei o max e min nos filhos) (em alguns dos filhos fiz overright as funcoes pq n tem max ou n tem min)
  * */

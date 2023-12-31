@@ -3,7 +3,7 @@
 //
 
 #include "Aparelhos.h"
-
+int Aparelho::nextid = 1;
 
 Aparelho::Aparelho(std::string name) {
     this->name = name;

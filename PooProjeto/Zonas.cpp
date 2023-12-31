@@ -4,10 +4,10 @@
 
 #include "Zonas.h"
 
+int Zona::nextId = 1;
 
-
-Zona::Zona(int id, std::string letra, int posx, int posy, Propriedade propr) {
-    this->id = id;
+Zona::Zona(std::string letra, int posx, int posy, Propriedade propr) {
+    this->id = nextId++;
     this->letra = letra;
     this->posx = posx;
     this->posy = posy;

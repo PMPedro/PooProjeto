@@ -29,6 +29,8 @@ public:
     vector <Zona> getZonas();
     void limpaZonas();
     void removeZona(int index);
+
+    void replaceZona(int index, Zona nZona); //para dar update as propriedades de uma zona
     //fazer um set dimensao x e y, com min 2 e max 4;
     //fazer constructor
     //pode nao ter zonas tb

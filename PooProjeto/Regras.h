@@ -13,14 +13,26 @@ using namespace std;
 
 class Regras {
     int valor; //valor a ser comparado
-
+    int min;
+    int max;
+    string pro;
 
 public:
 
-    Regras(int valor = 0);
+    Regras(int valor = 0, int min = 0, int max = 0, string letra =" ");
 
     void setValor(int x);
     int getValor();
+
+    bool igual_X(int x);
+    bool menor_que (int x);
+    bool maior_que (int x);
+    bool entre (int menor, int maior);
+    bool fora (int menor , int maior);
+    int check(int valor);
+    string getLetra();
+
+
     ~Regras();
 
 

@@ -12,7 +12,7 @@ using namespace std;
 class Aparelho {
         bool state;
         string name;
-         int nextid = 1;
+        static int nextid;
         int id;
 public:
     Aparelho(string name);

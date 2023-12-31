@@ -122,7 +122,7 @@ bool Interface::veriZnova(const std::string& comando, Habitacao *casa, vector <c
     }else{
         int id = rand() % 1000 + 1;
         //casa->addZonas(linha, coluna, "C");
-        Zona h(id, "", linha, coluna); //cria uma zona auxiliar
+        Zona h("", linha, coluna); //cria uma zona auxiliar
         Propriedade aux; //cria as propriedades para essa zona
         aux.inilerSensores(); //inicializa as propriedades com valores random
         h.setPropriedades(aux); //adiciona as propriedades a zona aux criada
@@ -267,6 +267,7 @@ bool Interface::veriZprops(const std::string& comando, Habitacao *casa ,cWindow 
                 (*listComandos) << "\tHumidade - " + to_string(auxP.getHumidade());
                 (*listComandos) << "\tRadiacao - " + to_string(auxP.getRad());
                 (*listComandos) << "\tFumo - " + to_string(auxP.getFumo());
+                (*listComandos) << "\tVibracao - " + to_string(auxP.getVibracao());
                 break;
             }
         }
@@ -299,9 +300,25 @@ bool Interface::veriPmod(const std::string& comando, Habitacao *casa, cWindow *l
         for(int i = 0; i < aux.size(); i++){
             if(aux[i].getId() == idZona){
                 found = true;
-                auxP = aux[i].getPropriedades();
+                auxP = aux[i].getPropriedades(); //vamos buscar todas as propriedades q essa zonas conte
+                //vamos dar update apenas a q o user pretende
+                if(nome == "t"){ SensorTemperatura a(valor); auxP.setTemp(a);    }
+                if(nome == "v"){ sensorVibracao a(valor); auxP.setVibracao(a);   }
+                if(nome == "m"){sensorLuz a(valor); auxP.setLuz(a);}
+                if(nome == "d"){sensorRadiacao a(valor); auxP.setRad(a);}
+                if(nome == "h"){sensorHumidade a(valor); auxP.setHumidade(a);}
+                if(nome == "o"){sensorSom a(valor); auxP.setSom(a);}
+                if(nome == "f"){sensorFumo a(valor); auxP.setFumo(a);}
+                //como alteramos apenas 1 propriedades, voltamos a mandar as propriedades antigas (q agr contem o valor da nova update) e damos replace a zona com o valor da nova propriedade
+                aux[i].setPropriedades(auxP);
+                (*casa).replaceZona(idZona, aux[i]);
+                (*listComando) << "\nAlteracao efetuada com Sucesso!";
             }
         }
+    }
+
+    if(found == false){
+        (*listComando) << "\nAlteracao nao foi efetuada! No foi encontrado nenhuma zona com esse Id";
     }
 
 

@@ -13,7 +13,7 @@ class RegrasTemperatura : Regras {
     int min = -273;
 
 public:
-    RegrasTemperatura(int x) : Regras(x) {};
+    RegrasTemperatura(int x) : Regras(x,-273, 10000, "t") {};
 //Faz regras e devolve "true" or "false", o Processador mais tarde ira processar esse resultado (de acordo com os comandos q temos de fazer)
     bool igual_X(int x);
     bool menor_que (int x);

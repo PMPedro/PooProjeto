@@ -30,7 +30,7 @@ void Habitacao::setDimensaoY(int y) {
 }
 
 void Habitacao::addZonas(int x, int y, string letra) {
-       Zona aux(id++,letra, x, y);
+       Zona aux(letra, x, y);
         if(checkZonasQuant()){
             this->zonas.push_back(aux);
         }
@@ -65,5 +65,13 @@ void Habitacao::limpaZonas() {
 void Habitacao::removeZona(int index) {
     if (index >= 0 && index < zonas.size()) {
         zonas.erase(zonas.begin() + index);
+    }
+}
+
+void Habitacao::replaceZona(int index, Zona nZona) {
+    for(int i = 0; i < this->zonas.size(); i++){
+        if(this->zonas[i].getId() == index){
+            this->zonas[i] = nZona;
+        }
     }
 }

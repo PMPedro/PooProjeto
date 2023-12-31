@@ -11,7 +11,7 @@ Propriedade::Propriedade(Data temp, Data luz, Data rad, Data vib, Data hum, Data
     this->vibracao.setPropriedades(vib);
     this->radiacao.setPropriedades(rad);
     this->luz.setPropriedades(luz);
-    this->temperatura.setPropriedades(luz);
+    this->temperatura.setPropriedades(temp);
     this->som.setPropriedades(som);
 }
 
@@ -75,3 +75,48 @@ void Propriedade::setLuz(int x) {
 void Propriedade::setRad(int x) {
     this->radiacao.setQuantidade(x);
 }
+
+void Propriedade::setTemp(SensorTemperatura x) {
+    this->temperatura = x.get_valortemp();
+}
+
+void Propriedade::setRad(sensorRadiacao x) {
+    this->radiacao = x.getRad();
+}
+
+void Propriedade::setLuz(sensorLuz x) {
+    this->luz = x.getLuiz();
+}
+
+void Propriedade::setHumidade(sensorHumidade x) {
+    this->humidade = x.getHumidade();
+}
+
+void Propriedade::setFumo(sensorFumo x) {
+    this->fumo = x.getFumo();
+}
+
+void Propriedade::setSom(sensorSom x) {
+    this->som = x.getSom();
+}
+
+int Propriedade::getVibracao() {
+    return this->vibracao.getQuantidade();
+}
+
+void Propriedade::setVibracao(int x) {
+    this->vibracao.setQuantidade(x);
+}
+
+void Propriedade::setVibracao(sensorVibracao x) {
+    this->vibracao = x.getValorVibracao();
+}
+
+
+
+
+
+
+
+
+
